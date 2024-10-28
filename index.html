@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--==================== UNICONS ====================-->
+        <script src="https://kit.fontawesome.com/98036f5e00.js" crossorigin="anonymous"></script>
+
+        <!--==================== SWIPER CSS ====================-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        
+        <!--==================== CSS ====================-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Portfolio</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Tania</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list grid">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class="fa-solid fa-home"></i> Accueil </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class="fa-solid fa-user"></i>À propos </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">
+                                <i class="fa-solid fa-file-lines"></i> Mes compétences </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#services" class="nav__link">
+                                <i class="fa-solid fa-briefcase"></i> Services </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#portfolio" class="nav__link">
+                                <i class="fa-solid fa-image"></i> Mes travaux </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">
+                                <i class="fa-solid fa-message"></i> Me contacter </a>
+                        </li>
+                    </ul>
+                    <i class="fa-solid fa-xmark nav__close" id="nav-close"></i>
+                </div>
+
+                    <div class="nav__btns">
+                        <i class="fa-solid fa-moon change-theme" id="theme-button"></i>
+                        <div class="nav__toggle" id="nav-toggle">
+                            <i class="fa-solid fa-table-cells-large"></i>
+                        </div>
+                    </div>
+            </nav>
+            
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <div class="home__content grid">
+                        <div class="home__social">
+                            <a href="https://www.linkedin.com/" target="_blank" class="home__social-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+
+                            <a href="https://www.github.com" target="_blank" class="home__social-icon">
+                                <i class="fa-brands fa-github-square"></i>
+                            </a>
+
+                            <a href="https://www.behance.com" target="_blank" class="home__social-icon">
+                                <i class="fa-brands fa-behance-square"></i>
+
+                            </a>
+                        </div>
+
+                        <div class="home__img">
+                            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask0" mask-type="alpha">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                </mask>
+                                <g mask="url(#mask0)">
+                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
+                                    <image class="home__blob-img" x='0' y='0' xlink:href="assets/img/PHOTO-2022-11-25-21-00-26.jpg"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="home__data">
+                            <h1 class="home__title">Bonjour, je suis Tania André</h1>
+                            <h3 class="home__subtitle">Étudiante dans les métiers de l'internet & du multimédia</h3>
+                            <p class="home__description">Passionnée par les nouvelles technologies et l'art graphique.</p>
+                            <a href="#contact" class="button button--flex">
+                                Me contacter &nbsp<i class="fa-solid fa-paper-plane button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="home-scroll">
+                        <a href="#about" class="home__scroll-button button--flex">
+                            <i class="fa-solid fa-computer-mouse-scrollwheel home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Descendre</span>
+                            <i class="fa-solid fa-arrow-down home__scroll-arrow"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <h2 class="section__title">À propos</h2>
+                <span class="section__subtitle">Mon Introduction</span>
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <p class="about__description">
+                            <p>Je suis une étudiante en licence professionnelle de Webdesign à Montbéliard. Je m'intéresse au design graphique et à l'informatique depuis mon plus jeune âge.</p>
+
+                    </div>
+                    <!-- <div class="about__info">
+                        <div>
+                            <span class="about__info-title"></span>
+                        </div>
+                    </div> -->
+                    <div class="about__buttons">
+                        <a download="" href="assets/pdf/CV_Tania_ANDRE.pdf" class="button button--flex">
+                            Mon CV &nbsp<i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+                    </div>
+            </section>
+
+            <!--==================== SKILLS ====================-->
+            <section class="skills section" id="skills">
+                <h2 class="section__title">Compétences</h2>
+                <span class="section__subtitle">Mon niveau technique</span>
+
+                <div class="skills__container container grid">
+                  <div>
+                      <!--==================== SKILLS1 ====================-->
+                      <div class="skills__content skills__open">
+
+
+                          <div class="skills__header">
+                              <i class="fa-solid fa-file-code skills__icon"></i>
+                              <div>
+                                  <h1 class="skills__title">Développement</h1>
+                                  <span class="skills__subtitle"></span>
+                              </div>
+                              <i class="fa-solid fa-angle-down skills__arrow"></i>
+                          </div>
+                          <div class="skills__list grid">
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">HTML</h3>
+                                      <span class="skills__number">90%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__html"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">CSS</h3>
+                                      <span class="skills__number">75%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__css"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">JavaScript</h3>
+                                      <span class="skills__number">68%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__js"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">PHP</h3>
+                                      <span class="skills__number">65%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__php"></span>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <!--Skills2-->
+                      <div class="skills__content skills__open">
+
+
+                          <div class="skills__header">
+                              <i class="fa-solid fa-swatchbook skills__icon"></i>
+                              <div>
+                                  <h1 class="skills__title">Design</h1>
+                                  <span class="skills__subtitle"></span>
+                              </div>
+                              <i class="fa-solid fa-angle-down skills__arrow"></i>
+                          </div>
+                          <div class="skills__list grid">
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">Adobe XD et Figma</h3>
+                                      <span class="skills__number">90%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__adobexd"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">Illustrator</h3>
+                                      <span class="skills__number">78%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__illustrator"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">InDesign</h3>
+                                      <span class="skills__number">75%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__indesign"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">Photoshop</h3>
+                                      <span class="skills__number">70%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__photoshop"></span>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <!--Skills3-->
+                      <div class="skills__content skills__close">
+
+
+                          <div class="skills__header">
+                              <i class="fa-solid fa-video skills__icon"></i>
+                              <div>
+                                  <h1 class="skills__title">Motion Design</h1>
+                                  <span class="skills__subtitle"></span>
+                              </div>
+                              <i class="fa-solid fa-angle-down skills__arrow"></i>
+                          </div>
+                          <div class="skills__list grid">
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">After Effects</h3>
+                                      <span class="skills__number">68%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__ae"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">Adobe Animate</h3>
+                                      <span class="skills__number">55%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__animate"></span>
+                                  </div>
+                              </div>
+
+                              <div class="skills__data">
+                                  <div class="skills__titles">
+                                      <h3 class="skills__name">Da Vinci Resolve</h3>
+                                      <span class="skills__number">65%</span>
+                                  </div>
+                                  <div class="skills__bar">
+                                      <span class="skills__percentage skills__resolve"></span>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+
+
+                 </div>
+                </div>
+
+                   </section>
+
+
+
+
+
+           <!--==================== QUALIFICATION ====================-->
+            <section class="qualification section">
+                <h2 class="section__title">Qualifications</h2>
+                <span class="section__subtitle">Mon parcours</span>
+
+                <div class="qualification__container container">
+                    <div class="qualifications__tabs">
+                        <div class="qualifications__button button--flex qualification__active" data-target="#education">
+                            <i class="fa-solid fa-graduation-cap qualification__icon"></i>
+                            Éducation
+                        </div>
+
+                        <div class="qualifications__button button--flex" data-target="#work">
+                            <i class="fa-solid fa-briefcase qualification__icon"></i>
+                            Éxpérience professionnelle
+                        </div>
+                    </div>
+
+                    <div class="qualification__sections">
+
+                        <div class="qualification__content qualification__active" data-content id="education">
+
+                            <div class="qualification__data">
+                                <div>
+                                    <h3>Brevet des Collèges</h3>
+                                    <span class="qualification__subtitle">
+                                    Collège Olympe de Gouges
+                                    </span>
+                                    <div class="qualification__calendar">
+                                        <i class="fa-solid fa-calendar qualification__icon"></i>
+                                        2012-2016
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+
+                            </div>
+
+                                <div class="qualification__data">
+                                    <div>
+                                    </div>
+
+                                    <div>
+                                        <span class="qualification__rounder"></span>
+                                        <span class="qualification__line"></span>
+                                    </div>
+
+                                    <div>
+                                        <h3>Baccalauréat Littéraire</h3>
+                                        <span class="qualification__subtitle">
+                                    Lycée Armand Peugeot
+                                    </span>
+                                        <div class="qualification__calendar">
+                                            <i class="fa-solid fa-calendar qualification__icon"></i>
+                                            2016-2019
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="qualification__data">
+                                    <div>
+                                    </div>
+
+                                    <div>
+                                        <span class="qualification__rounder"></span>
+                                       <span class="qualification__line"></span> 
+                                    </div>
+
+                                    <div>
+                                        <h3>DUT Métiers du Multimédia et de l'Internet</h3>
+                                        <span class="qualification__subtitle">
+                                    IUT de Belfort-Montbéliard
+                                    </span>
+                                        <div class="qualification__calendar">
+                                            <i class="fa-solid fa-calendar qualification__icon"></i>
+                                            2020-2022
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="qualification__data">
+                                    <div>
+                                    </div>
+
+                                    <div>
+                                        <span class="qualification__rounder"></span>
+                                       <!-- <span class="qualification__line"></span> -->
+                                    </div>
+
+                                    <div>
+                                        <h3>Licence professionnelle de Webdesign</h3>
+                                        <span class="qualification__subtitle">
+                                    IUT de Belfort-Montbéliard
+                                    </span>
+                                        <div class="qualification__calendar">
+                                            <i class="fa-solid fa-calendar qualification__icon"></i>
+                                            2022-2023
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                
+
+                </div>
+
+                        <div class="qualification__content" data-content id="work">
+
+                            <div class="qualification__data">
+                                <div>
+                                    <h3>Commune de Pont-de-Roide</h3>
+                                    <span class="qualification__subtitle">
+                                    Ateliers Municipaux <br> Centre de Vaccination
+                                    </span>
+                                    <div class="qualification__calendar">
+                                        <i class="fa-solid fa-calendar qualification__icon"></i>
+                                        Emploi saisonnier - Août 2021 (2 semaines)
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="qualification__data">
+                                <div>
+                                    <h3>APERAM Stainless Precision</h3>
+                                    <span class="qualification__subtitle">
+                                    Opératrice en travaux de rénovation
+                                    </span>
+                                    <div class="qualification__calendar">
+                                        <i class="fa-solid fa-calendar qualification__icon"></i>
+                                        Intérimaire - Août 2022 (1 mois)
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <!-- <span class="qualification__line"></span> -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!--==================== SERVICES ====================-->
+            <section class="services section" id="services">
+                <h2 class="section__title">Services</h2>
+                <span class="section__subtitle">Ce que je peux faire pour vous</span>
+                <div class="services__container container grid">
+                    <div class="services__content">
+                        <div>
+                            <i class="fa-solid fa-desktop services__icon"></i>
+                            <h3 class="services__title"> Webdesign </h3>
+                        </div>
+
+                        <span class="button button--flex button--small button--link services__button">
+                            Voir plus &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h4 class="services__modal-title"> Webdesign</h4>
+                                <i class="fa-solid fa-times services__modal-close"></i>
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Maquettage de site web</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Intégration Front-End</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>J'étudie la stratégie marketing, la cible</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Je crée des pages ergonomiques et interactives</p>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="services__content">
+                        <div>
+                            <i class="fa-solid fa-pen-to-square services__icon"></i>
+                            <h3 class="services__title"> Graphisme </h3>
+                        </div>
+
+                        <span class="button button--flex button--small button--link services__button">
+                            Voir plus &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h4 class="services__modal-title"> Graphisme</h4>
+                                <i class="fa-solid fa-times services__modal-close"></i>
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Illustration et dessin vectoriel</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Mise en page print layout et web</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Charte graphique et identité visuelle</p>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="services__content">
+                        <div>
+                            <i class="fa-solid fa-photo-film services__icon"></i>
+                            <h3 class="services__title"> Audiovisuel </h3>
+                        </div>
+
+                        <span class="button button--flex button--small button--link services__button">
+                            Voir plus &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h4 class="services__modal-title"> Audiovisuel</h4>
+                                <i class="fa-solid fa-times services__modal-close"></i>
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Cahier des tendances</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Scénarisation, brainstorming</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Storyboarding</p>
+                                        <i class="fa-solid fa-check-circle services__modal-icon"></i>
+                                        <p>Réalisation technique (animation 2D, montage)</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                
+
+            </section>
+
+            <!--==================== PORTFOLIO ====================-->
+
+            <section class="portfolio section" id="portfolio">
+                <h2 class="section__title">Portfolio</h2>
+                <span class="section__subtitle">Mes dernières réalisations</span>
+
+                <div class="portfolio__container container swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--=============== PORTFOLIO 1 ===============-->
+
+
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/mmi_montbe.png" alt="" class="portfolio__img">
+    
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Projet DUT MMI - Semestre 3</h3>
+                                <p class="portfolio__description">Refonte du site du département MMI</p>
+                                <a href="#" class="button button--flex button--small portfolio__button">
+                                    Demo &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--=============== PORTFOLIO 2 ===============-->
+
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/mmi_montbe.png" alt="" class="portfolio__img">
+    
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Projet individuel LPWD - "Rêve Exotique"</h3>
+                                <p class="portfolio__description">Refonte du site de l'animalerie Rêve Exotique à Voujeaucourt</p>
+                                <a href="#" class="button button--flex button--small portfolio__button">
+                                    Demo &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <!--=============== PORTFOLIO 3 ===============-->
+
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/herman.png" alt="" class="portfolio__img">
+
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Projet collectif LPWD - Herman Miller</h3>
+                                <p class="portfolio__description">Refonte du site de matériel de bureau et mobilier de luxe Herman Miller (partie Gaming)</p>
+                                <a href="#" class="button button--flex button--small portfolio__button">
+                                    Demo &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+            
+                        <!--=============== PORTFOLIO 4 ===============-->
+
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="assets/img/flip.png" alt="" class="portfolio__img">
+
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Projet LPWD - "FLIP"</h3>
+                                <p class="portfolio__description">Concept d'une application de sensibilisation aux Fake News</p>
+                                <a href="#" class="button button--flex button--small portfolio__button">
+                                    Demo &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                           <!--=============== PORTFOLIO 5 ===============-->
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/drom.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Projet LPWD - "Drøm"</h3>
+                            <p class="portfolio__description">Création d'un site internet pour une salle de concert fictive ainsi que d'une campagne publicitaire (affiches, plaquette, carte)</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--=============== PORTFOLIO 6 ===============-->
+
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/craft_beer.png" alt="" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Graphisme LPWD - "Craft Beer Festival"</h3>
+                            <p class="portfolio__description">Proposition de logo pour un festival de bière à Strasbourg</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo &nbsp<i class="fa-solid fa-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                    <div class="swiper-button-next">
+                        <i class="fa-solid fa-angle-right swiper-portfolio-icon"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="fa-solid fa-angle-left swiper-portfolio-icon"></i>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </section>
+
+
+            <!--==================== CONTACT ME ====================-->
+            <section class="contact section" id="contact">
+
+                <h2 class="section__title">Me Contacter</h2>
+                <span class="section__subtitle">Si vous avez des questions</span>
+
+                <div class="contact__container container grid">
+                    <div>
+                        <div class="contact__information">
+                            <i class="fa-solid fa-phone contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Téléphone</h3>
+                            <span class="contact__subtitle">06 51 70 62 16</span>
+                        </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="contact__information">
+                        <i class="fa-solid fa-envelope contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">harumi25150@gmail.com</span>
+                        </div>
+                    </div>
+                
+
+                <form action="" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Nom</label>
+                            <input type="text" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Prénom</label>
+                            <input type="text" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Projet</label>
+                            <input type="text" class="contact__input">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Message</label>
+                           <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                        </div>
+
+                    </div>
+                        
+                        <div>
+                            <a href="#" class="button button--flex">
+                                Envoyer &nbsp<i class="fa-solid fa-paper-plane button__icon"></i>
+                            </a>
+                        </div>
+                    
+                </form>
+            </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+
+            <div class="footer__bg">
+                <div class="footer__container container grid">
+                    <h1 class="footer__title"></h1>
+                
+
+                <ul class="footer__links">
+                    <li><a href="#services" class="footer__links">Services</a></li>
+
+                    <li><a href="#portfolio" class="footer__links">Portfolio</a></li>
+
+                    <li><a href="#contact" class="footer__links">Me contacter</a></li>
+
+                </ul>
+
+                <div class="footer__socials">
+                    <a href="https://www.facebook.com" target="_blank" class="footer__social">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="footer__social">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="footer__social">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+            </div>
+            
+        </footer>
+
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="fa-solid fa-arrow-up scrollup__icon"></i>
+        </a>
+
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--==================== MAIN JS ====================-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
