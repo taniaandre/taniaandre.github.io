@@ -288,6 +288,20 @@ img{
     bottom: 0;
 }
 
+/* Hide close icon by default */
+.nav__close {
+    display: none;
+}
+
+/* When menu is shown, show close icon, hide toggle icon */
+.show-menu ~ .nav__btns #nav-toggle {
+    display: none;
+}
+
+.show-menu ~ .nav__btns #nav-close {
+    display: block;
+}
+
 /* Active link */
 
 
