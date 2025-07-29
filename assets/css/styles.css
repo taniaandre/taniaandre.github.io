@@ -204,7 +204,7 @@ img{
 }
 /*==================== NAV ====================*/
 
-.nav{
+.nav {
     max-width: 968px;
     height: var(--header-height);
     display: flex;
@@ -213,25 +213,80 @@ img{
 }
 
 .nav__logo,
-.nav__toggle{
+.nav__toggle {
     color: var(--title-color);
     font-weight: var(--font-medium);
 }
 
-.nav__logo:hover{
+.nav__logo:hover {
     color: var(--first-color);
 }
 
-.nav__toggle{
+.nav__toggle {
     font-size: 1.1rem;
     cursor: pointer;
-    
 }
 
-.nav__toggle:hover{
+.nav__toggle:hover {
     color: var(--first-color);
 }
 
+/* ======= MOBILE STYLES (par défaut) ======= */
+.nav__menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: .3s;
+    z-index: 100;
+}
+
+.show-menu {
+    bottom: 0;
+}
+
+.nav__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__icon {
+    font-size: 1.2rem;
+}
+
+.nav__close {
+    position: absolute;
+    right: 1.3rem;
+    bottom: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+.nav__close:hover {
+    color: var(--first-color-alt);
+}
+
+/* ======= STYLES POUR ÉCRANS ≥ 768px ======= */
 @media screen and (min-width: 768px) {
     .nav__menu {
         position: static;
@@ -254,70 +309,6 @@ img{
         display: none;
     }
 }
-
-
-.nav__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    justify-items: center;
-}
-
-
-.nav__link{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: var(--small-font-size);
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-}
-
-.nav__link:hover{
-    color: var(--first-color);
-
-}
-
-.nav__icon{
-    font-size: 1.2rem;
-}
-
-.nav__close{
-    position: absolute;
-    right: 1.3rem;
-    bottom: .5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--first-color);
-}
-
-.nav__close:hover{
-    color: var(--first-color-alt);
-}
-/* show menu */
-.show-menu {
-    bottom: 0;
-}
-
-/* Hide close icon by default */
-.nav__close {
-    display: none;
-}
-
-/* When menu is shown, show close icon, hide toggle icon */
-.show-menu ~ .nav__btns #nav-toggle {
-    display: none;
-}
-
-.show-menu ~ .nav__btns #nav-close {
-    display: block;
-}
-
-/* Active link */
-
-
-/* Change background header */
-
 /*==================== HOME ====================*/
 .home__container{
     gap: 1rem;
