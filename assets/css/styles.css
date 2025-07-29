@@ -203,57 +203,36 @@ img{
     background-color: var(--body-color);
 }
 /*==================== NAV ====================*/
-
-.nav {
-    max-width: 968px;
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav__logo,
-.nav__toggle {
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-}
-
-.nav__logo:hover {
-    color: var(--first-color);
-}
-
-.nav__toggle {
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-.nav__toggle:hover {
-    color: var(--first-color);
-}
-
-/* ======= MOBILE STYLES (par défaut) ======= */
+/* BARRE DE NAVIGATION MOBILE EN BAS (fixe, horizontale) */
 .nav__menu {
     position: fixed;
-    bottom: -100%;
+    bottom: 0;
     left: 0;
     width: 100%;
     background-color: var(--body-color);
-    padding: 2rem 1.5rem 4rem;
-    box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
-    border-radius: 1.5rem 1.5rem 0 0;
-    transition: .3s;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     z-index: 100;
+    border-radius: 1.5rem 1.5rem 0 0;
 }
 
-.show-menu {
-    bottom: 0;
-}
-
+/* Liens en ligne et centrés */
 .nav__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    justify-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav__item {
+    flex: 1;
+    text-align: center;
 }
 
 .nav__link {
@@ -265,28 +244,17 @@ img{
     font-weight: var(--font-medium);
 }
 
-.nav__link:hover {
-    color: var(--first-color);
-}
-
 .nav__icon {
     font-size: 1.2rem;
 }
 
+/* Cacher les toggles sur mobile car on n’en a plus besoin */
+.nav__toggle,
 .nav__close {
-    position: absolute;
-    right: 1.3rem;
-    bottom: .5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--first-color);
+    display: none;
 }
 
-.nav__close:hover {
-    color: var(--first-color-alt);
-}
-
-/* ======= STYLES POUR ÉCRANS ≥ 768px ======= */
+/* VERSION DESKTOP */
 @media screen and (min-width: 768px) {
     .nav__menu {
         position: static;
@@ -294,21 +262,22 @@ img{
         box-shadow: none;
         background-color: transparent;
         display: flex;
-        align-items: center;
-        bottom: auto;
+        justify-content: flex-end;
         border-radius: 0;
     }
 
     .nav__list {
         display: flex;
         gap: 2rem;
+        justify-content: flex-end;
     }
 
-    .nav__toggle,
-    .nav__close {
-        display: none;
+    .nav__link {
+        flex-direction: row;
+        gap: 0.5rem;
     }
 }
+
 /*==================== HOME ====================*/
 .home__container{
     gap: 1rem;
