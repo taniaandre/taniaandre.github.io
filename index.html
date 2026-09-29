@@ -1,331 +1,964 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tania André — Portfolio M2 PSM</title>
+    <title>Tania André — Product Designer & Front-End Developer | M2 PSM Candidate</title>
+    
+    <!-- Fonts: Syne & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#08070d',
+                        surface: '#110e1b',
+                        surfaceLight: '#1b172a',
+                        brand: {
+                            50: '#f5f3ff',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            accent: '#d946ef'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- FontAwesome & Swiper CSS -->
-    <script src="https://kit.fontawesome.com/98036f5e00.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08070d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2342;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+
+        .glass-card {
+            background: rgba(17, 14, 27, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .modal-active {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+    </style>
 </head>
-<body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Tania André</a>
+<body class="bg-midnight text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-white relative overflow-x-hidden">
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="fa-solid fa-house nav__icon"></i> Accueil
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="fa-solid fa-user nav__icon"></i> À propos
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="fa-solid fa-code nav__icon"></i> Compétences
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#services" class="nav__link">
-                            <i class="fa-solid fa-briefcase nav__icon"></i> Expertises
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">
-                            <i class="fa-solid fa-layer-group nav__icon"></i> Projets
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="fa-solid fa-paper-plane nav__icon"></i> Contact
-                        </a>
-                    </li>
-                </ul>
-                <i class="fa-solid fa-xmark nav__close" id="nav-close"></i>
-            </div>
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
 
-            <div class="nav__btns">
-                <i class="fa-solid fa-moon change-theme" id="theme-button"></i>
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div class="glow-bg bg-brand-600 w-96 h-96 top-10 -left-20 animate-pulse-slow"></div>
+    <div class="glow-bg bg-brand-accent w-[30rem] h-[30rem] top-1/3 -right-32 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="glow-bg bg-purple-900 w-[25rem] h-[25rem] bottom-10 left-1/3 animate-pulse-slow" style="animation-delay: 4s;"></div>
 
-    <!--==================== MAIN ====================-->
-    <main class="main">
-        <!--==================== HOME ====================-->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content grid">
-                    <div class="home__social">
-                        <a href="https://fr.linkedin.com/in/tania-andre?trk=people-guest_people_search-card" target="_blank" rel="noopener" class="home__social-icon" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/taniaandre" target="_blank" rel="noopener" class="home__social-icon" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://www.behance.net/taniaandr" target="_blank" rel="noopener" class="home__social-icon" aria-label="Behance">
-                            <i class="fa-brands fa-behance"></i>
-                        </a>
-                    </div>
+    <div class="relative z-10 bg-grid-pattern">
 
-                    <div class="home__img">
-                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                <image class="home__blob-img" x="0" y="0" xlink:href="assets/img/PHOTO-2022-11-25-21-00-26.jpg"/>
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="home__data">
-                        <h1 class="home__title">Bonjour, je suis Tania André</h1>
-                        <h3 class="home__subtitle">Designer UX/UI & Développeuse Front-End</h3>
-                        <p class="home__description">Étudiante en Master Produits et Services Multimédia (PSM). Spécialisée dans la conception d'interfaces interactives et le développement web.</p>
-                        <a href="#contact" class="button button--flex">
-                            Me contacter &nbsp;<i class="fa-solid fa-paper-plane button__icon"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="home-scroll">
-                    <a href="#about" class="home__scroll-button">
-                        <i class="fa-solid fa-computer-mouse home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Découvrir mon profil</span>
-                        <i class="fa-solid fa-arrow-down home__scroll-arrow"></i>
+        <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <nav class="glass-card rounded-full px-6 py-3 flex items-center justify-between border border-white/10 shadow-2xl">
+                    <a href="#" class="flex items-center gap-2 group">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center font-display font-bold text-white text-lg shadow-lg group-hover:scale-105 transition-transform">
+                            T
+                        </div>
+                        <span class="font-display font-bold text-lg text-white tracking-wide group-hover:text-brand-400 transition-colors">
+                            Tania André<span class="text-brand-accent">.</span>
+                        </span>
                     </a>
-                </div>
-            </div>
-        </section>
 
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-            <h2 class="section__title">À propos</h2>
-            <span class="section__subtitle">Mon parcours & mes objectifs</span>
-            <div class="about__container container grid">
-                <div class="about__data">
-                    <p class="about__description">
-                        Diplômée du BUT MMI et poursuivant mon cursus en Master 2 Produits et Services Multimédia, je suis passionnée par la conception d'interfaces centrées utilisateur (UX/UI) et l'intégration web responsive.
-                    </p>
-                </div>
-                <div class="about__buttons">
-                    <a download href="assets/pdf/CV_Tania_ANDRE.pdf" class="button button--flex">
-                        Télécharger mon CV &nbsp;<i class="fa-solid fa-download"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+                    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                        <li><a href="#about" class="hover:text-brand-400 transition-colors">À propos</a></li>
+                        <li><a href="#bento" class="hover:text-brand-400 transition-colors">Vision PSM</a></li>
+                        <li><a href="#portfolio" class="hover:text-brand-400 transition-colors">Projets</a></li>
+                        <li><a href="#skills" class="hover:text-brand-400 transition-colors">Compétences</a></li>
+                        <li><a href="#experience" class="hover:text-brand-400 transition-colors">Parcours</a></li>
+                    </ul>
 
-        <!--==================== SKILLS ====================-->
-        <section class="skills section" id="skills">
-            <h2 class="section__title">Compétences</h2>
-            <span class="section__subtitle">Mon niveau technique</span>
+                    <div class="flex items-center gap-4">
+                        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-600 to-brand-accent text-white font-semibold text-xs uppercase tracking-wider shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 hover:scale-105 transition-all">
+                            <span>Contact</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </a>
 
-            <div class="skills__container container grid">
-                <div>
-                    <!-- Development -->
-                    <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="fa-solid fa-code skills__icon"></i>
-                            <div>
-                                <h3 class="skills__title">Développement</h3>
-                                <span class="skills__subtitle">Front-End & CMS</span>
-                            </div>
-                            <i class="fa-solid fa-angle-down skills__arrow"></i>
-                        </div>
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h4 class="skills__name">HTML / CSS</h4>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__html"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h4 class="skills__name">JavaScript</h4>
-                                    <span class="skills__number">70%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__js"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h4 class="skills__name">WordPress</h4>
-                                    <span class="skills__number">75%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__css"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Design -->
-                    <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="fa-solid fa-swatchbook skills__icon"></i>
-                            <div>
-                                <h3 class="skills__title">Design UX/UI</h3>
-                                <span class="skills__subtitle">Prototypage & Graphisme</span>
-                            </div>
-                            <i class="fa-solid fa-angle-down skills__arrow"></i>
-                        </div>
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h4 class="skills__name">Figma & Adobe XD</h4>
-                                    <span class="skills__number">85%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__adobexd"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h4 class="skills__name">Illustrator</h4>
-                                    <span class="skills__number">80%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__illustrator"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== PORTFOLIO ====================-->
-        <section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Portfolio</h2>
-            <span class="section__subtitle">Mes études de cas et réalisations</span>
-
-            <div class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/mmi_montbe.png" alt="Projet MMI" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Refonte MMI Montbéliard</h3>
-                            <p class="portfolio__description">Refonte UX/UI et développement front-end du site de la formation MMI.</p>
-                            <a href="https://www.behance.net/gallery/137642649/Projet-Collectif-de-Semestre-3" target="_blank" rel="noopener" class="button button--flex button--small portfolio__button">
-                                DÉMO &nbsp;<i class="fa-solid fa-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/flip.png" alt="Projet FLIP" class="portfolio__img">
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">FLIP — Fake News</h3>
-                            <p class="portfolio__description">Conception d'une application interactive de sensibilisation aux désinformations.</p>
-                            <a href="https://www.behance.net/gallery/158076559/FLIP" target="_blank" rel="noopener" class="button button--flex button--small portfolio__button">
-                                DÉMO &nbsp;<i class="fa-solid fa-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-button-next">
-                    <i class="fa-solid fa-angle-right swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="fa-solid fa-angle-left swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
-        <!--==================== CONTACT ====================-->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Me Contacter</h2>
-            <span class="section__subtitle">Une question ou une opportunité ?</span>
-
-            <div class="contact__container container grid">
-                <div>
-                    <div class="contact__information">
-                        <i class="fa-solid fa-envelope contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">taniaandrepro@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-
-                <form action="" class="contact__form grid">
-                    <div class="contact__inputs grid">
-                        <div class="contact__content">
-                            <label class="contact__label">Nom</label>
-                            <input type="text" class="contact__input" required>
-                        </div>
-                        <div class="contact__content">
-                            <label class="contact__label">Email</label>
-                            <input type="email" class="contact__input" required>
-                        </div>
-                        <div class="contact__content">
-                            <label class="contact__label">Message</label>
-                            <textarea name="message" rows="7" class="contact__input" required></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <button type="submit" class="button button--flex">
-                            Envoyer &nbsp;<i class="fa-solid fa-paper-plane button__icon"></i>
+                        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden text-slate-300 hover:text-white text-xl p-2 focus:outline-none">
+                            <i class="fa-solid fa-bars"></i>
                         </button>
                     </div>
-                </form>
+                </nav>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden glass-card mx-4 rounded-2xl p-6 mt-2 border border-white/10 shadow-2xl transition-all">
+                <ul class="flex flex-col gap-4 font-medium text-slate-300">
+                    <li><a href="#about" class="mobile-link block py-2 hover:text-brand-400">À propos</a></li>
+                    <li><a href="#bento" class="mobile-link block py-2 hover:text-brand-400">Vision PSM</a></li>
+                    <li><a href="#portfolio" class="mobile-link block py-2 hover:text-brand-400">Projets</a></li>
+                    <li><a href="#skills" class="mobile-link block py-2 hover:text-brand-400">Compétences</a></li>
+                    <li><a href="#experience" class="mobile-link block py-2 hover:text-brand-400">Parcours</a></li>
+                    <li><a href="#contact" class="mobile-link block py-2 text-brand-400 font-bold">Me Contacter</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section id="about" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 backdrop-blur-md">
+                                <i class="fa-solid fa-graduation-cap mr-1.5"></i> Candidature M2 PSM
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 backdrop-blur-md">
+                                <i class="fa-solid fa-palette mr-1.5"></i> Product Designer UX/UI
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 backdrop-blur-md">
+                                <i class="fa-solid fa-code mr-1.5"></i> Front-End Developer
+                            </span>
+                        </div>
+
+                        <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-none">
+                            Concevoir des <br class="hidden sm:block">
+                            <span class="text-gradient">Expériences Digitales</span> <br>
+                            Centrées Humain.
+                        </h1>
+
+                        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Bonjour, je suis <strong class="text-white font-semibold">Tania André</strong>. Diplômée en BUT MMI et candidate au <strong class="text-brand-400">Master 2 Produits et Services Multimédia</strong>. J'allie recherche UX rigoureuse, design d'interfaces haut de gamme et intégration Front-End moderne.
+                        </p>
+
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#portfolio" class="px-8 py-4 rounded-full bg-gradient-to-r from-brand-600 via-purple-600 to-brand-accent text-white font-bold text-sm shadow-xl shadow-brand-600/30 hover:shadow-brand-600/60 hover:scale-105 transition-all flex items-center gap-3 group">
+                                <span>Explorer les Projets</span>
+                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+
+                            <a href="assets/pdf/CV_Tania_ANDRE.pdf" download class="px-8 py-4 rounded-full glass-card hover:bg-white/10 text-slate-200 font-semibold text-sm border border-white/15 transition-all flex items-center gap-2 hover:border-brand-400">
+                                <i class="fa-solid fa-file-arrow-down text-brand-400"></i>
+                                <span>Télécharger CV</span>
+                            </a>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <p class="font-display font-bold text-2xl sm:text-3xl text-white">6 Projets</p>
+                                <p class="text-xs text-slate-400 mt-1">Sélectionnés M2</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-2xl sm:text-3xl text-brand-400">3 Ans</p>
+                                <p class="text-xs text-slate-400 mt-1">Savoir-Faire MMI</p>
+                            </div>
+                            <div>
+                                <p class="font-display font-bold text-2xl sm:text-3xl text-fuchsia-400">100%</p>
+                                <p class="text-xs text-slate-400 mt-1">Focus Utilisateur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Photo Container -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div id="heroProfileCard" class="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 max-w-md w-full relative overflow-hidden group border border-white/15">
+                            
+                            <div class="relative w-56 h-64 mx-auto mb-6 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-brand-500 to-brand-accent shadow-2xl">
+                                <img src="PHOTO-2022-11-25-21-00-26.jpg" 
+                                     onerror="this.src='https://placehold.co/400x500/1b172a/a78bfa?text=Tania+Andr%C3%A9'" 
+                                     alt="Tania André Profile" 
+                                     class="w-full h-full object-cover rounded-xl filter contrast-105 group-hover:scale-105 transition-all duration-500">
+                                
+                                <div class="absolute bottom-3 right-3 px-3 py-1 bg-midnight/80 backdrop-blur-md rounded-full border border-emerald-500/40 text-emerald-400 text-xs font-semibold flex items-center gap-1.5 shadow-md">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>Candidature M2</span>
+                                </div>
+                            </div>
+
+                            <div class="text-center space-y-2">
+                                <h3 class="font-display font-bold text-2xl text-white">Tania André</h3>
+                                <p class="text-sm font-medium text-brand-400">Product Designer & Front-End Developer</p>
+                                <p class="text-xs text-slate-400 flex items-center justify-center gap-2 pt-1">
+                                    <i class="fa-solid fa-location-dot text-brand-accent"></i> Besançon / Remote, France
+                                </p>
+                            </div>
+
+                            <div class="flex items-center justify-center gap-3 pt-6 mt-6 border-t border-white/10">
+                                <a href="https://fr.linkedin.com/in/tania-andre" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-all" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="https://github.com/taniaandre" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-all" aria-label="GitHub">
+                                    <i class="fa-brands fa-github text-sm"></i>
+                                </a>
+                                <a href="https://www.behance.net/taniaandr" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-all" aria-label="Behance">
+                                    <i class="fa-brands fa-behance text-sm"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
-    </main>
 
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div>
-                    <h2 class="footer__title">Tania André</h2>
-                    <span class="footer__subtitle">Designer UX/UI & Développeuse Front-End</span>
+        <section id="bento" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Posture Professionnelle</h2>
+                    <p class="font-display font-bold text-3xl sm:text-5xl text-white">Mon Mindset & Objectif M2 PSM</p>
                 </div>
 
-                <ul class="footer__links">
-                    <li><a href="#services" class="footer__link">Services</a></li>
-                    <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
-                    <li><a href="#contact" class="footer__link">Me contacter</a></li>
-                </ul>
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    
+                    <div class="md:col-span-2 glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between border border-white/10 relative overflow-hidden group">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all"></div>
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl mb-6">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-2xl text-white mb-3">Vision du Master PSM</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Le Master Produits et Services Multimédia représente pour moi le tremplin idéal pour passer d'une maîtrise technique opérationnelle (BUT MMI) à une <strong class="text-brand-400">stratégie globale de produit digital</strong>. Mon objectif est de piloter des projets complexes centrés sur la valeur utilisateur et l'éco-conception.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-center gap-3 text-xs font-semibold text-brand-300">
+                            <span>Stratégie UX</span> • <span>Design System</span> • <span>Gestion de Produit</span>
+                        </div>
+                    </div>
 
-                <div class="footer__socials">
-                    <a href="https://fr.linkedin.com/in/tania-andre" target="_blank" rel="noopener" class="footer__social" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/taniaandre" target="_blank" rel="noopener" class="footer__social" aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
+                    <div class="glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between border border-white/10 relative overflow-hidden bg-gradient-to-br from-brand-900/30 to-midnight">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold mb-6">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Alternance 24-25
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white mb-2">Recherche d'Alternance</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed">
+                                Disponible pour intégrer une équipe Produit en tant que <strong class="text-white">UX/UI Designer</strong> ou <strong class="text-white">Développeuse Front-End</strong>.
+                            </p>
+                        </div>
+                        <a href="#contact" class="mt-6 text-xs font-bold text-brand-400 hover:text-brand-300 inline-flex items-center gap-2">
+                            <span>Discuter d'une opportunité</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between border border-white/10">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center text-fuchsia-400 text-xl mb-6">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-white mb-4">Stack Technique</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Figma</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">ReactJS</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Tailwind CSS</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">JavaScript ES6+</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-medium text-slate-200">Suite Adobe</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <p class="footer__copy">&#169; Tania André. Tous droits réservés.</p>
+        </section>
+
+        <section id="portfolio" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Projets & Réalisations</h2>
+                    <p class="font-display font-bold text-3xl sm:text-5xl text-white">6 Case Studies Multimédia</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Refonte MMI -->
+                    <div class="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-slate-900">
+                            <img src="mmi_montbe.jpg" 
+                                 onerror="this.src='https://placehold.co/600x400/110e1b/a78bfa?text=MMI+Montbeliard'" 
+                                 alt="Refonte MMI Montbéliard" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-600/90 backdrop-blur-md text-white text-xs font-bold">
+                                UX/UI & Webdev
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-white group-hover:text-brand-400 transition-colors">Refonte MMI Montbéliard</h3>
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                    Modernisation ergonomique du portail de la formation et optimisation du parcours d'orientation des futurs candidats.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openModal('mmi')" class="text-xs font-bold text-brand-400 hover:text-brand-300 flex items-center gap-2">
+                                    <span>Explorer le projet</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <a href="https://www.behance.net/gallery/137642649/Projet-Collectif-de-Semestre-3" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-sm" title="Behance">
+                                    <i class="fa-brands fa-behance"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: FLIP App -->
+                    <div class="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-slate-900">
+                            <img src="flip.jpg" 
+                                 onerror="this.src='https://placehold.co/600x400/110e1b/d946ef?text=FLIP+Fake+News'" 
+                                 alt="FLIP App Concept" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-fuchsia-600/90 backdrop-blur-md text-white text-xs font-bold">
+                                App Concept Mobile
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-white group-hover:text-fuchsia-400 transition-colors">FLIP — Anti Fake News</h3>
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                    Application ludo-éducative permettant aux jeunes de développer leur esprit critique face aux infox et désinformations.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openModal('flip')" class="text-xs font-bold text-fuchsia-400 hover:text-fuchsia-300 flex items-center gap-2">
+                                    <span>Explorer le projet</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <a href="https://www.behance.net/gallery/158076559/FLIP" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-sm" title="Behance">
+                                    <i class="fa-brands fa-behance"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Drøm Concert -->
+                    <div class="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-slate-900">
+                            <img src="drom.jpg" 
+                                 onerror="this.src='https://placehold.co/600x400/110e1b/38bdf8?text=Drom+Concert'" 
+                                 alt="Drøm Concert Hall" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-cyan-600/90 backdrop-blur-md text-white text-xs font-bold">
+                                Identité & Event
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-white group-hover:text-cyan-400 transition-colors">Drøm — Concert & Billetterie</h3>
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                    Création d'une identité visuelle immersive et de l'expérience de billetterie digitale pour une salle de spectacle contemporaine.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openModal('drom')" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                                    <span>Explorer le projet</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <a href="https://www.behance.net/gallery/158075217/DROEM" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-sm" title="Behance">
+                                    <i class="fa-brands fa-behance"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Herman Miller Aeron -->
+                    <div class="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-slate-900">
+                            <img src="herman.jpg" 
+                                 onerror="this.src='https://placehold.co/600x400/110e1b/10b981?text=Herman+Miller'" 
+                                 alt="Herman Miller Aeron" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-xs font-bold">
+                                E-Commerce & UI
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-white group-hover:text-emerald-400 transition-colors">Herman Miller — Aeron Gaming</h3>
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                    Design de landing page e-commerce haute performance et responsive pour la chaise ergonomique emblématique.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openModal('herman')" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-2">
+                                    <span>Explorer le projet</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Craft Beer Festival -->
+                    <div class="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-slate-900">
+                            <img src="craft_beer.jpg" 
+                                 onerror="this.src='https://placehold.co/600x400/110e1b/f59e0b?text=Craft+Beer+Festival'" 
+                                 alt="Craft Beer Festival" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-xs font-bold">
+                                Site Événementiel
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-white group-hover:text-amber-400 transition-colors">Craft Beer Festival Strasbourg</h3>
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                    Conception web interactive présentant les brasseries partenaires, le programme et les informations pratiques du festival.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openModal('craft')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-2">
+                                    <span>Explorer le projet</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Rêve Exotique -->
+                    <div class="glass-card glass-card-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group">
+                        <div class="relative overflow-hidden h-60 bg-slate-900">
+                            <img src="reve_exotique.jpg" 
+                                 onerror="this.src='https://placehold.co/600x400/110e1b/ec4899?text=Reve+Exotique'" 
+                                 alt="Rêve Exotique Website" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent"></div>
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-rose-600/90 backdrop-blur-md text-white text-xs font-bold">
+                                Webdesign & Brand
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-display font-bold text-xl text-white group-hover:text-rose-400 transition-colors">Rêve Exotique — Voujeaucourt</h3>
+                                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                    Refonte visuelle poétique du site web de l'animalerie spécialisée, valorisant le catalogue d'animaux et le matériel.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <button onclick="openModal('reve')" class="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center gap-2">
+                                    <span>Explorer le projet</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Matrice de Compétences</h2>
+                    <p class="font-display font-bold text-3xl sm:text-5xl text-white">Savoir-Faire Technique & UX</p>
+                </div>
+
+                <div class="flex justify-center gap-2 sm:gap-4 mb-12 flex-wrap">
+                    <button class="skill-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold transition-all bg-brand-600 text-white shadow-lg" data-category="all">
+                        Tout Voir
+                    </button>
+                    <button class="skill-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold glass-card text-slate-300 hover:text-white transition-all" data-category="design">
+                        UX / UI Design
+                    </button>
+                    <button class="skill-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold glass-card text-slate-300 hover:text-white transition-all" data-category="dev">
+                        Développement Front-End
+                    </button>
+                    <button class="skill-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold glass-card text-slate-300 hover:text-white transition-all" data-category="tools">
+                        Outils & CMS
+                    </button>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-white/10" data-cat="design">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-semibold text-white text-sm flex items-center gap-2">
+                                <i class="fa-brands fa-figma text-fuchsia-400"></i> Figma & Adobe XD (Prototypage)
+                            </span>
+                            <span class="text-xs font-bold text-brand-400">90%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-brand-500 to-fuchsia-500 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-white/10" data-cat="dev">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-semibold text-white text-sm flex items-center gap-2">
+                                <i class="fa-brands fa-html5 text-orange-400"></i> HTML5 / CSS3 / SASS / Tailwind
+                            </span>
+                            <span class="text-xs font-bold text-brand-400">92%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full" style="width: 92%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-white/10" data-cat="dev">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-semibold text-white text-sm flex items-center gap-2">
+                                <i class="fa-brands fa-js text-yellow-400"></i> JavaScript ES6+ / ReactJS
+                            </span>
+                            <span class="text-xs font-bold text-brand-400">75%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-white/10" data-cat="design">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-semibold text-white text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-vial text-cyan-400"></i> UX Research & Tests Utilisateurs
+                            </span>
+                            <span class="text-xs font-bold text-brand-400">85%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-white/10" data-cat="tools">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-semibold text-white text-sm flex items-center gap-2">
+                                <i class="fa-brands fa-wordpress text-blue-400"></i> WordPress & CMS Custom
+                            </span>
+                            <span class="text-xs font-bold text-brand-400">80%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card glass-card p-6 rounded-2xl border border-white/10" data-cat="tools">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-semibold text-white text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-paintbrush text-purple-400"></i> Suite Adobe (Illustrator, PS, InDesign)
+                            </span>
+                            <span class="text-xs font-bold text-brand-400">82%</span>
+                        </div>
+                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-purple-400 to-fuchsia-500 rounded-full" style="width: 82%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2">Mon Parcours</h2>
+                    <p class="font-display font-bold text-3xl sm:text-5xl text-white">Formation & Objectifs</p>
+                </div>
+
+                <div class="space-y-8 relative before:absolute before:inset-0 before:left-1/2 before:-translate-x-px before:w-0.5 before:bg-gradient-to-b before:from-brand-500 before:via-fuchsia-500 before:to-transparent">
+                    
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-600 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-brand-500/50">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-white/10 space-y-2">
+                            <span class="text-xs font-bold text-brand-400">2024 - 2025 (Candidature)</span>
+                            <h3 class="font-display font-bold text-lg text-white">Master 2 Produits et Services Multimédia</h3>
+                            <p class="text-xs text-slate-300 font-medium">Université de Franche-Comté (PSM)</p>
+                            <p class="text-xs text-slate-400 leading-relaxed">Spécialisation en gestion de projet digital, design d'expérience utilisateur complexe et architecture de service.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-fuchsia-600 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg shadow-fuchsia-500/50">
+                            <i class="fa-solid fa-university text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl border border-white/10 space-y-2">
+                            <span class="text-xs font-bold text-fuchsia-400">2021 - 2024</span>
+                            <h3 class="font-display font-bold text-lg text-white">BUT Métiers du Multimédia et de l'Internet (MMI)</h3>
+                            <p class="text-xs text-slate-300 font-medium">IUT Nord Franche-Comté, Montbéliard</p>
+                            <p class="text-xs text-slate-400 leading-relaxed">Formation pluridisciplinaire : Développement Front-End, UX/UI Design, Audiovisuel et Communication Digitale.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-brand-400">Me Contacter</h2>
+                        <p class="font-display font-bold text-3xl sm:text-5xl text-white">Échangeons sur votre projet ou alternance.</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Vous souhaitez en savoir plus sur mon profil ou me proposer une opportunité d'alternance M2 PSM ? N'hésitez pas à me transmettre un message !
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center gap-4 glass-card p-4 rounded-2xl border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Email Direct</p>
+                                    <p class="text-sm font-semibold text-white">taniaandrepro@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 glass-card p-4 rounded-2xl border border-white/10">
+                                <div class="w-10 h-10 rounded-xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">LinkedIn</p>
+                                    <a href="https://fr.linkedin.com/in/tania-andre" target="_blank" class="text-sm font-semibold text-white hover:text-brand-400">linkedin.com/in/tania-andre</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="glass-card p-8 rounded-3xl border border-white/10 space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-slate-300">Votre Nom / Organisme</label>
+                                    <input type="text" required placeholder="Nom / Entreprise" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-all">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-semibold text-slate-300">Votre Email</label>
+                                    <input type="email" required placeholder="nom@domaine.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-all">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-slate-300">Sujet</label>
+                                <input type="text" required placeholder="Master PSM / Alternance / Opportunité" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-all">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-semibold text-slate-300">Message</label>
+                                <textarea rows="4" required placeholder="Bonjour Tania..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent text-white font-bold text-sm shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+                                <span>Envoyer le Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-12 border-t border-white/10 text-center text-slate-500 text-xs">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>© 2026 Tania André — Portfolio Candidature M2 PSM</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://fr.linkedin.com/in/tania-andre" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="https://github.com/taniaandre" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="https://www.behance.net/taniaandr" target="_blank" class="hover:text-white transition-colors">Behance</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Case Study Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-midnight/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-card max-w-3xl w-full rounded-3xl p-6 sm:p-8 border border-white/20 relative space-y-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl p-2" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Dynamically injected via JavaScript -->
+            </div>
         </div>
-    </footer>
+    </div>
 
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="fa-solid fa-arrow-up scrollup__icon"></i>
-    </a>
+    <!-- Toast Banner Notification -->
+    <div id="toast" class="fixed bottom-8 right-8 z-50 glass-card px-6 py-4 rounded-2xl border border-emerald-500/30 text-emerald-400 text-xs font-bold shadow-2xl flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span>Message envoyé avec succès ! Je vous recontacterai très vite.</span>
+    </div>
 
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script>
+        // Particle Background Logic
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.color = ['#8b5cf6', '#d946ef', '#38bdf8'][Math.floor(Math.random() * 3)];
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < 40; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Mobile Navbar Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Skill Filter Tabs
+        const skillTabs = document.querySelectorAll('.skill-tab-btn');
+        const skillCards = document.querySelectorAll('.skill-card');
+
+        skillTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                skillTabs.forEach(t => {
+                    t.classList.remove('bg-brand-600', 'text-white', 'shadow-lg');
+                    t.classList.add('glass-card', 'text-slate-300');
+                });
+                tab.classList.add('bg-brand-600', 'text-white', 'shadow-lg');
+                tab.classList.remove('glass-card', 'text-slate-300');
+
+                const cat = tab.getAttribute('data-category');
+                skillCards.forEach(card => {
+                    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Database with Project Details
+        const modalData = {
+            mmi: {
+                title: "Refonte du site MMI Montbéliard",
+                subtitle: "Étude de Cas UX & Développement Front-End",
+                img: "mmi_montbe.jpg",
+                problem: "La plateforme manquait d'un positionnement visuel attrayant pour les lycéens et présentait des difficultés d'accès aux informations d'orientation.",
+                role: "Lead UI Designer & Intégratrice Web",
+                deliverables: ["Audit ergonomique & Personas", "Maquettes Figma interactives", "Intégration responsive SASS/HTML5"],
+                link: "https://www.behance.net/gallery/137642649/Projet-Collectif-de-Semestre-3"
+            },
+            flip: {
+                title: "FLIP — Fake News Awareness App",
+                subtitle: "Mobile App Concept & UX Research",
+                img: "flip.jpg",
+                problem: "Concevoir une interface ludique et engageante pour apprendre aux jeunes à analyser les sources et déceler les infox sur mobile.",
+                role: "UX Researcher & Prototypeur",
+                deliverables: ["Entretiens utilisateurs & Wireframes", "Prototypage Figma interactif", "Tests d'utilisabilité"],
+                link: "https://www.behance.net/gallery/158076559/FLIP"
+            },
+            drom: {
+                title: "Drøm — Salle de Concert & Billetterie",
+                subtitle: "Direction Artistique & UX Web",
+                img: "drom.jpg",
+                problem: "Créer une identité visuelle contemporaine et un parcours de billetterie fluide sans friction sur desktop et mobile.",
+                role: "Directrice Artistique & UI Designer",
+                deliverables: ["Charte graphique complète", "Design System UI", "Prototype de parcours de réservation"],
+                link: "https://www.behance.net/gallery/158075217/DROEM"
+            },
+            herman: {
+                title: "Herman Miller — Aeron Gaming Chair",
+                subtitle: "E-Commerce UI & Experience",
+                img: "herman.jpg",
+                problem: "Concevoir une expérience d'achat haut de gamme mettant en valeur les innovations ergonomiques du siège Aeron auprès de la cible gaming.",
+                role: "UI Designer Front-End",
+                deliverables: ["Landing Page e-commerce interactive", "Avis & configurateur visuel", "Responsive layout Mac/Mobile"],
+                link: "https://www.behance.net/taniaandr"
+            },
+            craft: {
+                title: "Craft Beer Festival — Strasbourg",
+                subtitle: "Site Web Événementiel",
+                img: "craft_beer.jpg",
+                problem: "Mettre en avant les 20+ brasseries artisanales partenaires et optimiser le parcours visiteur pour la billetterie et le programme.",
+                role: "Webdesigner & Développeuse Front-End",
+                deliverables: ["Identité visuelle événementielle", "Site web dynamique & responsive", "Carte interactive des exposants"],
+                link: "https://www.behance.net/taniaandr"
+            },
+            reve: {
+                title: "Rêve Exotique — Voujeaucourt",
+                subtitle: "Refonte Web & Catalogue",
+                img: "reve_exotique.jpg",
+                problem: "Valoriser le catalogue de poissons et matériels d'aquariophilie de l'enseigne grâce à un design web épuré et poétique.",
+                role: "Webdesigner UI/UX",
+                deliverables: ["Arborescence & Navigation", "Design visuel dark-theme", "Prototypes de fiches produits"],
+                link: "https://www.behance.net/taniaandr"
+            }
+        };
+
+        const modal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-400">${data.subtitle}</span>
+                    <h3 class="font-display font-bold text-2xl text-white">${data.title}</h3>
+                    
+                    <div class="relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-white/10">
+                        <img src="${data.img}" onerror="this.src='https://placehold.co/800x400/110e1b/a78bfa?text=Project+Mockup'" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+                        <strong class="text-xs font-semibold text-white block">Problématique :</strong>
+                        <p class="text-xs text-slate-300 leading-relaxed">${data.problem}</p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 text-xs">
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <strong class="text-white block mb-1">Mon Rôle :</strong>
+                            <p class="text-brand-300 font-medium">${data.role}</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <strong class="text-white block mb-1">Livrables clés :</strong>
+                            <ul class="list-disc list-inside text-slate-300 space-y-1">
+                                ${data.deliverables.map(d => `<li>${d}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex justify-end">
+                        <a href="${data.link}" target="_blank" rel="noopener" class="px-6 py-2.5 rounded-full bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg">
+                            <span>Voir sur Behance</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            modal.classList.add('modal-active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('modal-active');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            e.target.reset();
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+    </script>
 </body>
 </html>
