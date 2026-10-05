@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRØM — Case Study · Tania André (Design UI/UX & Brand Design)</title>
+<meta name="description" content="Case study de la direction artistique et de l'identité visuelle de DRØM, salle de concert électro à Paris, réalisé par Tania André.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --bg: #090A0F;
+  --bg-card: rgba(18, 20, 29, 0.75);
+  --green: #35DE7B;
+  --green-glow: rgba(53, 222, 123, 0.35);
+  --green-dark: #1b8a49;
+  --pink-accent: #ff4081;
+  --purple-glow: rgba(157, 78, 221, 0.3);
+  --ink: #FFFFFF;
+  --mute: #A0A5BA;
+  --edge: rgba(255, 255, 255, 0.12);
+  --glass: rgba(20, 24, 38, 0.65);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  font: 400 1.02rem/1.6 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+section { padding: 80px 0; position: relative; }
+
+/* Grid / Grid Lines Background Effect */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-glows {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 40% at 20% 15%, var(--green-glow), transparent 70%),
+    radial-gradient(50% 45% at 80% 60%, var(--purple-glow), transparent 70%),
+    radial-gradient(35% 35% at 50% 85%, rgba(53, 222, 123, 0.15), transparent 70%);
+}
+
+/* Header & Nav */
+nav {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1160px, calc(100vw - 32px));
+  padding: 10px 20px;
+  border-radius: 99px;
+  background: rgba(12, 14, 22, 0.8);
+  border: 1px solid var(--edge);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 0.9rem 'DM Sans';
+  color: var(--green);
+  transition: transform 0.2s;
+}
+.nav-back:hover { transform: translateX(-4px); }
+
+.nav-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-sm {
+  background: var(--green);
+  color: #000;
+  font: 700 0.85rem 'DM Sans';
+  padding: 8px 18px;
+  border-radius: 99px;
+  transition: all 0.2s;
+}
+.btn-sm:hover {
+  background: #fff;
+  box-shadow: 0 0 15px var(--green-glow);
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 150px;
+  padding-bottom: 60px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(53, 222, 123, 0.1);
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero h1 span.green {
+  color: var(--green);
+  text-shadow: 0 0 30px var(--green-glow);
+}
+
+.hero-sub {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--mute);
+  max-width: 42ch;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--edge);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  margin-top: 40px;
+}
+
+.meta-item small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--mute);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.meta-item strong {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Glass Card Component */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--edge);
+  border-radius: 28px;
+  padding: 32px;
+  backdrop-filter: blur(14px);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.glass-card:hover {
+  border-color: rgba(53, 222, 123, 0.4);
+}
+
+/* Section Titles */
+.sec-head {
+  margin-bottom: 44px;
+}
+.sec-head span {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--green);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 8px;
+}
+.sec-head h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
+}
+
+/* Showcase Galleries & Images */
+.img-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  background: #000;
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.img-container:hover img {
+  transform: scale(1.02);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 860px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Color Palette Displays */
+.palette {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.swatch {
+  flex: 1;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--edge);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Lists & Badges */
+.feature-list {
+  list-style: none;
+  margin-top: 16px;
+}
+.feature-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--mute);
+}
+.feature-list li i {
+  color: var(--green);
+}
+
+/* Banner CTA Bottom */
+.cta-banner {
+  background: linear-gradient(135deg, rgba(53, 222, 123, 0.15) 0%, rgba(157, 78, 221, 0.15) 100%);
+  border: 1px solid var(--green);
+  border-radius: 36px;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner h2 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin-bottom: 16px;
+}
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--green);
+  color: #000;
+  font: 700 1.05rem 'DM Sans';
+  padding: 16px 36px;
+  border-radius: 99px;
+  box-shadow: 0 0 25px var(--green-glow);
+  transition: all 0.3s;
+  margin-top: 24px;
+}
+.btn-green:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
+}
+
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--edge);
+  color: var(--mute);
+  font-size: 0.9rem;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glows"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Retour au Portfolio</a>
+  <span class="nav-brand">Tania André</span>
+  <a href="index.html#contact" class="btn-sm">Contact Stage</a>
+</nav>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-tag"><i class="fa-solid fa-compact-disc"></i> Brand Identity &amp; Print</span>
+      <h1>DRØM <span class="green">— ELECTRO</span></h1>
+      <p class="hero-sub">Direction artistique, système visuel &amp; supports de communication pour une salle de concert électro au cœur de Paris.</p>
+      
+      <div class="hero-meta">
+        <div class="meta-item">
+          <small>Rôle</small>
+          <strong>Brand &amp; UI Designer</strong>
+        </div>
+        <div class="meta-item">
+          <small>Lieu</small>
+          <strong>Paris (12e)</strong>
+        </div>
+        <div class="meta-item">
+          <small>Outils</small>
+          <strong>Figma, Illustrator, Photoshop</strong>
+        </div>
+        <div class="meta-item">
+          <small>Livrables</small>
+          <strong>Charte, Dépliant, Visuals</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: CHARTE & LOGOTYPE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span>01 / Identité Visuelle</span>
+        <h2>Logotype &amp; Système Graphique</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="glass-card">
+          <h3 style="margin-bottom: 16px; font-size: 1.5rem; color: var(--green)">Le Concept DRØM</h3>
+          <p style="color: var(--mute); margin-bottom: 20px;">
+            Inspiré de l'esthétique futuriste et des grilles synthwave/techno, le logo s'articule autour d'un ensemble typographique massif associé à un cercle barré vert néon (#35DE7B). Le symbole évoque la boucle sonore et l'immersion nocturne.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Typographie géométrique Gilroy / Bricolage</li>
+            <li><i class="fa-solid fa-check"></i> Contraste fort entre noir absolu et vert néon</li>
+            <li><i class="fa-solid fa-check"></i> Déclinaisons modulaires pour tous formats</li>
+          </ul>
+
+          <div class="palette">
+            <div class="swatch" style="background:#000; color:#fff;">#000000</div>
+            <div class="swatch" style="background:#FFF; color:#000;">#FFFFFF</div>
+            <div class="swatch" style="background:#35DE7B; color:#000;">#35DE7B</div>
+          </div>
+        </div>
+
+        <div class="img-container">
+          <img src="02db83158198065.63872837c0715.jpg" alt="Recherches du logo DRØM et déclinaisons">
+        </div>
+      </div>
+
+      <div class="img-container" style="margin-top: 28px;">
+        <img src="f44058158198065.63872837ce5c1.jpg" alt="Charte graphique complète du projet DRØM">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: DEPLIANT & SUPPORTS PRINT -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span>02 / Communication Print</span>
+        <h2>Dépliant 3 Volets &amp; Présentation du Lieu</h2>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 28px;">
+        <div class="img-container">
+          <img src="33c490158198065.63873603a2fab.jpg" alt="Aperçu intérieur du dépliant DRØM">
+        </div>
+        <div class="img-container">
+          <img src="aa01b7158198065.63873603a417f.jpg" alt="Aperçu programmation et infos pratiques DRØM">
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h3 style="font-size: 1.4rem; margin-bottom: 12px; color: #fff;">Structure du Dépliant</h3>
+        <p style="color: var(--mute);">
+          Le dépliant présente l'historique du lieu situé au 141 boulevard Diderot à Paris, la capacité hybride (jusqu'à 40 000 personnes), le programme des prochains concerts (Myd, Vladimir Cauchemar, Peaches, Hyacinthe, Jacques) ainsi que les horaires et accès.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CAMPAGNE SOCIAL & AFFICHAGE -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span>03 / Déploiement &amp; Affichage</span>
+        <h2>Campagne Instagram &amp; Mobilier Urbain</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="img-container">
+          <img src="97560d158198065.63873603a82ea.jpg" alt="Publication Instagram DRØM">
+        </div>
+        <div class="img-container">
+          <img src="4133d3158198065.63873603a076e.jpg" alt="Affiche événementielle DRØM">
+        </div>
+        <div class="img-container">
+          <img src="2b29f5158198065.638736039ee66.jpg" alt="Carte de visite et coordonnées DRØM">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CASE STUDY SUMMARY -->
+  <section>
+    <div class="wrap">
+      <div class="glass-card" style="border-left: 4px solid var(--green);">
+        <h2 style="font-size: 2rem; margin-bottom: 16px;">Bilan du projet</h2>
+        <p style="color: var(--mute); font-size: 1.1rem; line-height: 1.7;">
+          Le projet DRØM m'a permis d'explorer la création d'un système d'identité complète dans un univers très typé : la musique électronique. De la recherche typographique à la conception de déclinaisons print et digitales, l'objectif principal était de maintenir une très forte cohérence visuelle tout en assurant une lisibilité optimale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section>
+    <div class="wrap">
+      <div class="cta-banner">
+        <h2>Un stage de 6 mois à pourvoir ?</h2>
+        <p style="color: var(--mute); max-width: 50ch; margin: 0 auto;">Je suis disponible pour rejoindre votre équipe en UI/UX design, webdesign ou brand design.</p>
+        <a href="index.html#contact" class="btn-green"><i class="fa-solid fa-paper-plane"></i> Contacter Tania André</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Tania André — Tous droits réservés • Case Study DRØM</p>
+  </div>
+</footer>
+
+</body>
+</html>
