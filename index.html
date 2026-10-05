@@ -1,5 +1,3 @@
-
-Index · HTML
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,7 +27,7 @@ a{color:inherit;text-decoration:none}
 section{padding:72px 0;position:relative}
 .sh{font-size:clamp(2rem,5vw,3.3rem);font-weight:800;margin-bottom:12px;max-width:18ch}
 .sub{color:var(--mute);max-width:52ch;margin-bottom:36px}
- 
+
 /* fond aurore + grain */
 .bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:
 radial-gradient(50% 40% at 8% 6%,rgba(255,156,194,.55),transparent 70%),
@@ -38,36 +36,36 @@ radial-gradient(50% 45% at 15% 62%,rgba(185,243,216,.6),transparent 70%),
 radial-gradient(55% 45% at 88% 88%,rgba(199,182,255,.6),transparent 70%),
 radial-gradient(30% 25% at 55% 40%,rgba(255,241,166,.4),transparent 70%)}
 .grain{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.22;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .5  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
- 
+
 /* étoile chrome 4 branches */
 .star{position:absolute;display:block;background:var(--chrome);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 6px rgba(255,255,255,.9));animation:tw 4s ease-in-out infinite}
 @keyframes tw{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.8) rotate(18deg)}}
- 
+
 /* surface holographique réutilisable */
 .holo-edge{border:2px solid transparent;background:linear-gradient(var(--glass),var(--glass)) padding-box,var(--holo) border-box;background-size:auto,300% 100%}
 .glass{background:var(--glass);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.9);border-radius:30px;box-shadow:0 10px 40px rgba(122,77,255,.12),inset 0 1px 0 #fff}
- 
+
 /* nav */
 nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:4px;border-radius:99px;padding:6px;box-shadow:0 8px 30px rgba(122,77,255,.2);max-width:calc(100vw - 20px);background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75)) padding-box,var(--holo) border-box;border:2px solid transparent;backdrop-filter:blur(16px)}
 nav a{font:500 .9rem 'DM Sans';padding:8px 14px;border-radius:99px;white-space:nowrap}
 nav a:hover{background:rgba(122,77,255,.1)}
 nav .cta{background:var(--holo);color:var(--ink);font-weight:700}
 @media(max-width:760px){nav .hide{display:none}}
- 
+
 /* boutons gélifiés */
 .btn{display:inline-flex;align-items:center;gap:10px;font:700 .95rem 'DM Sans';padding:14px 26px;border-radius:99px;border:1.5px solid rgba(27,20,64,.8);background:linear-gradient(180deg,#fff,#efe9ff);color:var(--ink);box-shadow:inset 0 2px 0 #fff,inset 0 -4px 8px rgba(122,77,255,.18),0 8px 20px rgba(122,77,255,.25);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:inset 0 2px 0 #fff,inset 0 -4px 8px rgba(122,77,255,.18),0 12px 26px rgba(224,68,155,.35)}
 .btn.p{background:var(--holo);background-size:200% 100%;animation:sh 8s linear infinite}
 @keyframes sh{to{background-position:200% 0}}
 .btns{display:flex;flex-wrap:wrap;gap:14px}
- 
+
 /* hero */
 .hero{padding-top:120px}
 .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.7);font-weight:700;font-size:.9rem;padding:8px 18px;border-radius:99px;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--holo) border-box}
 .badge i{width:10px;height:10px;border-radius:50%;background:#12a05c;animation:pl 1.8s infinite}
 @keyframes pl{0%{box-shadow:0 0 0 0 rgba(18,160,92,.6)}100%{box-shadow:0 0 0 10px rgba(18,160,92,0)}}
 .hg{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;margin-top:24px}
-h1{font-size:clamp(2.8rem,8vw,6rem);font-weight:800}
+h1{font-size:clamp(2.8rem,8vw,5.2rem);font-weight:800}
 h1 .sk{display:block;font:italic 600 1em/1.05 var(--serif);letter-spacing:-.01em;background:var(--holo-deep);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 10s linear infinite;padding-bottom:.08em}
 .lead{font-size:1.15rem;max-width:46ch;margin:22px 0 28px;color:var(--mute)}
 .lead b{color:var(--ink)}
@@ -84,14 +82,14 @@ h1 .sk{display:block;font:italic 600 1em/1.05 var(--serif);letter-spacing:-.01em
 .stats b{display:block;font:800 1.7rem 'Bricolage Grotesque'}
 .stats span{font-size:.82rem;color:var(--mute)}
 @media(max-width:860px){.hg{grid-template-columns:1fr}.s1{left:0}.s2{right:0}}
- 
+
 /* bandeau irisé */
 .marq{background:var(--holo);background-size:200% 100%;animation:sh 14s linear infinite;color:var(--ink);border-block:1.5px solid var(--ink);overflow:hidden;padding:14px 0;margin-top:56px;transform:rotate(-1.2deg);position:relative;z-index:1}
 .marq div{display:flex;gap:44px;width:max-content;animation:mv 30s linear infinite;font:800 1.5rem 'Bricolage Grotesque'}
 @keyframes mv{to{transform:translateX(-50%)}}
 .marq em{font-style:normal;color:#fff;-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
- 
+
 /* bento */
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
 .cell{padding:28px}
@@ -105,7 +103,7 @@ h1 .sk{display:block;font:italic 600 1em/1.05 var(--serif);letter-spacing:-.01em
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .chips span{border:1px solid var(--edge);background:rgba(255,255,255,.85);border-radius:99px;padding:5px 14px;font-size:.9rem;font-weight:500;box-shadow:inset 0 1px 0 #fff}
 @media(max-width:820px){.b1,.b2,.b3{grid-column:span 6}}
- 
+
 /* projets */
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 @media(max-width:980px){.pg{grid-template-columns:1fr 1fr}}@media(max-width:620px){.pg{grid-template-columns:1fr}}
@@ -118,9 +116,9 @@ h1 .sk{display:block;font:italic 600 1em/1.05 var(--serif);letter-spacing:-.01em
 .tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);color:var(--ink);font:700 .78rem 'DM Sans';padding:5px 12px;border-radius:99px;border:1.5px solid var(--ink)}
 .cb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
 .cb h3{font-size:1.3rem}.cb p{color:var(--mute);font-size:.92rem;flex:1}
-.cb button{align-self:flex-start;background:none;border:0;color:var(--ink);font:700 .92rem 'DM Sans';cursor:pointer;padding:4px 0}
-.cb button:hover{text-decoration:underline}
- 
+.cb button,.cb a.card-btn{align-self:flex-start;background:none;border:0;color:var(--ink);font:700 .92rem 'DM Sans';cursor:pointer;padding:4px 0;display:inline-flex;align-items:center;gap:6px}
+.cb button:hover,.cb a.card-btn:hover{text-decoration:underline}
+
 /* compétences */
 .tabs{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
 .tabs button{font:700 .9rem 'DM Sans';padding:10px 20px;border-radius:99px;border:1.5px solid var(--ink);background:linear-gradient(180deg,#fff,#efe9ff);color:var(--ink);cursor:pointer;box-shadow:inset 0 2px 0 #fff}
@@ -131,13 +129,13 @@ h1 .sk{display:block;font:italic 600 1em/1.05 var(--serif);letter-spacing:-.01em
 .sk2 div.l{display:flex;justify-content:space-between;font-weight:700;margin-bottom:10px}
 .bar{height:12px;border-radius:9px;background:rgba(27,20,64,.08);overflow:hidden;box-shadow:inset 0 1px 3px rgba(27,20,64,.15)}
 .bar i{display:block;height:100%;border-radius:9px;background:var(--holo-deep);box-shadow:inset 0 2px 0 rgba(255,255,255,.5)}
- 
+
 /* parcours */
 .tl{border-left:2px dashed rgba(122,77,255,.5);margin:28px 0 0 12px;padding-left:34px;display:grid;gap:20px;max-width:680px}
 .tl>div{position:relative;padding:22px}
 .tl>div::before{content:"";position:absolute;left:-52px;top:20px;width:30px;height:30px;background:var(--chrome);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 4px #9fb4ff)}
 .tl small{color:#5b3fd6;font-weight:700}.tl h3{font-size:1.3rem;margin:4px 0}.tl p{color:var(--mute);font-size:.93rem}
- 
+
 /* contact */
 .ct{position:relative;display:grid;grid-template-columns:1fr 1.2fr;gap:32px;padding:clamp(24px,5vw,52px);background:var(--holo);background-size:200% 200%;animation:sh 16s linear infinite;border:1.5px solid var(--ink);border-radius:44px;box-shadow:0 24px 60px rgba(122,77,255,.3),inset 0 2px 0 rgba(255,255,255,.8);color:var(--ink);overflow:hidden}
 @media(max-width:820px){.ct{grid-template-columns:1fr}}
@@ -148,7 +146,7 @@ label{font-weight:700;font-size:.85rem}
 input,textarea{width:100%;font:inherit;padding:12px 16px;border-radius:18px;border:1.5px solid var(--ink);background:rgba(255,255,255,.85);color:var(--ink);margin-top:4px;box-shadow:inset 0 2px 6px rgba(122,77,255,.15)}
 footer{padding:36px 0 50px;text-align:center;color:var(--mute);font-size:.9rem;position:relative;z-index:1}
 footer a{margin:0 10px;font-size:1.25rem;color:var(--ink)}
- 
+
 /* modale */
 dialog{margin:auto;max-width:720px;width:calc(100% - 28px);max-height:90vh;overflow:auto;background:linear-gradient(#fff,#fff) padding-box,var(--holo) border-box;color:var(--ink);border:3px solid transparent;border-radius:32px;padding:28px;box-shadow:0 30px 80px rgba(122,77,255,.35)}
 dialog::backdrop{background:rgba(60,30,120,.5);backdrop-filter:blur(8px)}
@@ -160,11 +158,12 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
 .mb div,.pb{background:rgba(199,182,255,.15);border:1px solid var(--edge);border-radius:18px;padding:14px;font-size:.92rem}
 .mb ul{padding-left:18px;color:var(--mute)}
 .x{position:absolute;top:16px;right:16px;background:none;border:0;color:var(--ink);font-size:1.3rem;cursor:pointer;padding:8px}
+.modal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
 </style>
 </head>
 <body>
 <div class="bg"></div><div class="grain"></div>
- 
+
 <nav aria-label="Navigation">
   <a href="#top" style="font-weight:700">Tania</a>
   <a class="hide" href="#apropos">À propos</a>
@@ -173,7 +172,7 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
   <a class="hide" href="#parcours">Parcours</a>
   <a class="cta" href="#contact">Me contacter</a>
 </nav>
- 
+
 <main id="top">
 <section class="hero">
   <span class="star" style="width:46px;height:46px;top:100px;right:9%"></span>
@@ -183,7 +182,7 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
     <span class="badge"><i></i> Recherche un stage de 6 mois</span>
     <div class="hg">
       <div>
-        <h1>Je conçois vos produits<span class="sk">et univers visuels.</span></h1>
+        <h1>Je crée des interfaces <span class="sk">et des marques.</span></h1>
         <p class="lead"><b>Tania André</b>, designer UI/UX et brand designer. Diplômée du BUT MMI, en Master 2 Conception, Création et Arts Multimédias : de la recherche utilisateur à la création de contenus multimédias, je donne une identité cohérente aux produits et aux marques.</p>
         <div class="btns">
           <a class="btn p" href="#projets">Voir mes projets <i class="fa-solid fa-arrow-down"></i></a>
@@ -203,7 +202,7 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
   </div>
   <div class="marq" aria-hidden="true"><div id="mq"></div></div>
 </section>
- 
+
 <section id="apropos">
   <div class="wrap">
     <h2 class="sh">Du design d'interface à l'identité de marque</h2>
@@ -228,7 +227,7 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
     </div>
   </div>
 </section>
- 
+
 <section id="projets">
   <span class="star" style="width:38px;height:38px;top:40px;right:12%;animation-delay:-1s"></span>
   <div class="wrap">
@@ -237,14 +236,14 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
     <div class="pg" id="pg"></div>
   </div>
 </section>
- 
+
 <section id="skills">
   <div class="wrap">
     <h2 class="sh">Compétences</h2>
     <div class="sg" id="sg"></div>
   </div>
 </section>
- 
+
 <section id="parcours">
   <div class="wrap">
     <h2 class="sh">Parcours</h2>
@@ -254,7 +253,7 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
     </div>
   </div>
 </section>
- 
+
 <section id="contact">
   <div class="wrap">
     <div class="ct">
@@ -274,33 +273,51 @@ dialog h3{font-size:1.8rem;margin:6px 0 16px}
   </div>
 </section>
 </main>
- 
+
 <footer>
   <a href="https://fr.linkedin.com/in/tania-andre" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
   <a href="https://github.com/taniaandre" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
   <a href="https://www.behance.net/taniaandr" target="_blank" rel="noopener" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
   <p>© 2026 Tania André. Tous droits réservés.</p>
 </footer>
- 
+
 <dialog id="m" aria-label="Détail du projet"><button class="x" aria-label="Fermer" onclick="m.close()"><i class="fa-solid fa-xmark"></i></button><div id="mc"></div></dialog>
- 
+
 <script>
 const B='https://www.behance.net/';
 const P=[
 {k:'MMI Montbéliard',t:'Refonte MMI Montbéliard',tag:'UX/UI · Web',c:'#A5BEFF',img:'mmi_montbe.png',d:"Refonte ergonomique du site de la formation et du parcours d'orientation des futurs étudiants.",p:"Le site manquait d'attrait pour les lycéens et l'information d'orientation était difficile à trouver.",r:'UI designer et webdesigner',l:['Audit ergonomique et personas','Maquettes Figma interactives','Intégration responsive'],u:B+'gallery/137642649/Projet-Collectif-de-Semestre-3'},
 {k:'FLIP',t:'FLIP, contre les fake news',tag:'Application mobile',c:'#FF9CC2',img:'flip.png',d:"Application ludique pour aider les jeunes à vérifier leurs sources et repérer les infox.",p:"Concevoir une interface engageante qui apprend à analyser une information sur mobile.",r:'UX researcher et prototypage',l:['Entretiens et wireframes','Prototype Figma interactif','Tests d\'utilisabilité'],u:B+'gallery/158076559/FLIP'},
-{k:'Drøm',t:'Drøm, concert et billetterie',tag:'Identité · Événement',c:'#67d4ff',img:'drom.jpg',d:"Identité visuelle et parcours de billetterie en ligne pour une salle de spectacle.",p:"Créer une identité contemporaine et une réservation fluide sur ordinateur comme sur mobile.",r:'Direction artistique et UI design',l:['Charte graphique','Design system','Prototype de réservation'],u:B+'gallery/158075217/DROEM'},
+{k:'Drøm',t:'Drøm, concert et billetterie',tag:'Identité · Événement',c:'#67d4ff',img:'drom.jpg',d:"Identité visuelle et parcours de billetterie en ligne pour une salle de spectacle.",p:"Créer une identité contemporaine et une réservation fluide sur ordinateur comme sur mobile.",r:'Direction artistique et UI design',l:['Charte graphique','Design system','Prototype de réservation'],u:B+'gallery/158075217/DROEM',page:'drom.html'},
 {k:'Herman Miller',t:'Herman Miller, Aeron Gaming',tag:'E-commerce · UI',c:'#B9F3D8',img:'herman.jpg',d:"Landing page e-commerce responsive pour la chaise ergonomique Aeron.",p:"Mettre en valeur les atouts ergonomiques de l'Aeron auprès d'un public gaming.",r:'UI designer',l:['Landing page interactive','Avis et visuels produit','Version mobile'],u:B+'taniaandr'},
 {k:'Craft Beer',t:'Craft Beer Festival Strasbourg',tag:'Site événementiel',c:'#FFF1A6',img:'craft_beer.jpg',d:"Site interactif : brasseries partenaires, programme et infos pratiques.",p:"Présenter plus de vingt brasseries et faciliter la consultation du programme.",r:'Webdesigner et brand designer',l:['Identité événementielle','Maquettes responsive','Carte des exposants'],u:B+'taniaandr'},
 {k:'Rêve Exotique',t:'Rêve Exotique, Voujeaucourt',tag:'Webdesign · Marque',c:'#C7B6FF',img:'reve_exotique.jpg',d:"Refonte visuelle du site d'une animalerie spécialisée et de son catalogue.",p:"Valoriser le catalogue de poissons et de matériel avec un design épuré.",r:'Webdesigner UI/UX',l:['Arborescence','Design en thème sombre','Fiches produit'],u:B+'taniaandr'}];
+
 const S=[['Figma et prototypage','fa-brands fa-figma',90,'design'],['UX research et webdesign','fa-solid fa-vial',80,'design'],['Illustrator, Photoshop, InDesign','fa-solid fa-paintbrush',85,'tools'],['After Effects et DaVinci Resolve','fa-solid fa-film',65,'tools'],['WordPress','fa-brands fa-wordpress',70,'tools'],['3ds Max et Unity (3D)','fa-solid fa-cube',50,'design'],['JavaScript, PHP, Python (débutante)','fa-solid fa-code',35,'dev']];
+
 const $=s=>document.querySelector(s);
+
 $('#mq').innerHTML=Array(2).fill(['UI Design','UX Design','Brand Design','Identité visuelle','Prototypage','Motion design','Montage vidéo','Figma','InDesign','After Effects','DaVinci Resolve'].map(x=>`<span>${x} <em>✦</em></span>`).join('')).join('');
-$('#pg').innerHTML=P.map((p,i)=>`<article class="card" style="--c:${p.c}"><div class="thumb"><span class="tag">${p.tag}</span>${p.k}<img src="assets/img/${p.img}" alt="Aperçu ${p.t}" loading="lazy" onerror="this.remove()"></div><div class="cb"><h3>${p.t}</h3><p>${p.d}</p><button onclick="op(${i})">Voir le projet <i class="fa-solid fa-arrow-right"></i></button></div></article>`).join('');
-function op(i){const p=P[i];$('#mc').innerHTML=`<span class="tag" style="position:static;display:inline-block">${p.tag}</span><h3>${p.t}</h3><div class="mi" style="background:linear-gradient(135deg,${p.c},#fff)"><img src="assets/img/${p.img}" alt="" onerror="this.remove()"></div><div class="pb"><b>Contexte</b><br>${p.p}</div><div class="mb"><div><b>Mon rôle</b><br>${p.r}</div><div><b>Livrables</b><ul>${p.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><a class="btn p" href="${p.u}" target="_blank" rel="noopener">Voir sur Behance <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;m.showModal()}
+
+$('#pg').innerHTML=P.map((p,i)=>{
+  const btn = p.page 
+    ? `<a class="card-btn" href="${p.page}">Découvrir la page du projet <i class="fa-solid fa-arrow-right"></i></a>` 
+    : `<button onclick="op(${i})">Voir le projet <i class="fa-solid fa-arrow-right"></i></button>`;
+  return `<article class="card" style="--c:${p.c}"><div class="thumb"><span class="tag">${p.tag}</span>${p.k}<img src="assets/img/${p.img}" alt="Aperçu ${p.t}" loading="lazy" onerror="this.remove()"></div><div class="cb"><h3>${p.t}</h3><p>${p.d}</p>${btn}</div></article>`;
+}).join('');
+
+function op(i){
+  const p=P[i];
+  const pageBtn = p.page ? `<a class="btn p" href="${p.page}">Découvrir l'étude de cas complète <i class="fa-solid fa-arrow-right"></i></a>` : '';
+  $('#mc').innerHTML=`<span class="tag" style="position:static;display:inline-block">${p.tag}</span><h3>${p.t}</h3><div class="mi" style="background:linear-gradient(135deg,${p.c},#fff)"><img src="assets/img/${p.img}" alt="" onerror="this.remove()"></div><div class="pb"><b>Contexte</b><br>${p.p}</div><div class="mb"><div><b>Mon rôle</b><br>${p.r}</div><div><b>Livrables</b><ul>${p.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><div class="modal-actions">${pageBtn}<a class="btn" href="${p.u}" target="_blank" rel="noopener">Voir sur Behance <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>`;
+  m.showModal();
+}
+
 m.addEventListener('click',e=>{if(e.target===m)m.close()});
+
 function rs(c){$('#sg').innerHTML=S.filter(s=>c==='all'||s[3]===c).map(s=>`<div class="glass sk2"><div class="l"><span><i class="${s[1]}"></i> ${s[0]}</span><span>${s[2]}%</span></div><div class="bar"><i style="width:${s[2]}%"></i></div></div>`).join('')}
 rs('all');
+
 $('#f').onsubmit=e=>{e.preventDefault();const f=e.target;location.href='mailto:taniaandrepro@gmail.com?subject='+encodeURIComponent('Stage de 6 mois — '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')')};
 </script>
 </body>
