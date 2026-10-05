@@ -1,37 +1,41 @@
-<script>
-const B='https://www.behance.net/';
-const P=[
-{k:'MMI Montbéliard',t:'Refonte MMI Montbéliard',tag:'UX/UI · Web',c:'#A5BEFF',img:'mmi_montbe.png',d:"Refonte ergonomique du site de la formation et du parcours d'orientation des futurs étudiants.",p:"Le site manquait d'attrait pour les lycéens et l'information d'orientation était difficile à trouver.",r:'UI designer et webdesigner',l:['Audit ergonomique et personas','Maquettes Figma interactives','Intégration responsive'],u:B+'gallery/137642649/Projet-Collectif-de-Semestre-3'},
-{k:'FLIP',t:'FLIP, contre les fake news',tag:'Application mobile',c:'#FF9CC2',img:'flip.png',d:"Application ludique pour aider les jeunes à vérifier leurs sources et repérer les infox.",p:"Concevoir une interface engageante qui apprend à analyser une information sur mobile.",r:'UX researcher et prototypage',l:['Entretiens et wireframes','Prototype Figma interactif','Tests d\'utilisabilité'],u:B+'gallery/158076559/FLIP'},
-{k:'Drøm',t:'Drøm, concert et billetterie',tag:'Identité · Événement',c:'#67d4ff',img:'drom.jpg',d:"Identité visuelle et parcours de billetterie en ligne pour une salle de spectacle.",p:"Créer une identité contemporaine et une réservation fluide sur ordinateur comme sur mobile.",r:'Direction artistique et UI design',l:['Charte graphique','Design system','Prototype de réservation'],u:B+'gallery/158075217/DROEM',link:'drom.html'},
-{k:'Herman Miller',t:'Herman Miller, Aeron Gaming',tag:'E-commerce · UI',c:'#B9F3D8',img:'herman.jpg',d:"Landing page e-commerce responsive pour la chaise ergonomique Aeron.",p:"Mettre en valeur les atouts ergonomiques de l'Aeron auprès d'un public gaming.",r:'UI designer',l:['Landing page interactive','Avis et visuels produit','Version mobile'],u:B+'taniaandr'},
-{k:'Craft Beer',t:'Craft Beer Festival Strasbourg',tag:'Site événementiel',c:'#FFF1A6',img:'craft_beer.jpg',d:"Site interactif : brasseries partenaires, programme et infos pratiques.",p:"Présenter plus de vingt brasseries et faciliter la consultation du programme.",r:'Webdesigner et brand designer',l:['Identité événementielle','Maquettes responsive','Carte des exposants'],u:B+'taniaandr'},
-{k:'Rêve Exotique',t:'Rêve Exotique, Voujeaucourt',tag:'Webdesign · Marque',c:'#C7B6FF',img:'reve_exotique.jpg',d:"Refonte visuelle du site d'une animalerie spécialisée et de son catalogue.",p:"Valoriser le catalogue de poissons et de matériel avec un design épuré.",r:'Webdesigner UI/UX',l:['Arborescence','Design en thème sombre','Fiches produit'],u:B+'taniaandr'}];
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tania André — Designer UI/UX & Brand Designer · Stage de 6 mois</title>
+<meta name="description" content="Étudiante en Master 2 Conception, Création et Arts Multimédias, designer UI/UX et brand designer, à la recherche d'un stage de 6 mois.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+--bg:#F7F3FF;--glass:rgba(255,255,255,.62);--ink:#1B1440;--mute:#54487a;
+--pink:#FF9CC2;--lilac:#C7B6FF;--sky:#9FD3FF;--mint:#B9F3D8;--butter:#FFF1A6;--cyan:#67d4ff;--violet:#A5BEFF;
+--edge:rgba(27,20,64,.14);
+--holo:linear-gradient(115deg,#ffb0d6 0%,#c9b8ff 22%,#a2d9ff 44%,#b9f3d8 64%,#fff1a6 82%,#ffb0d6 100%);
+--holo-deep:linear-gradient(100deg,#7a4dff,#e0449b 40%,#14a9d6 75%,#7a4dff);
+--chrome:linear-gradient(150deg,#fff 0%,#d9d2ff 28%,#9fb4ff 48%,#fff 62%,#ffc2e3 82%,#fff 100%);
+--serif:'Fraunces',serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font:400 1.02rem/1.6 'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid #5b3fd6;outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+section{padding:72px 0;position:relative}
+.sh{font-size:clamp(2rem,5vw,3.3rem);font-weight:800;margin-bottom:12px;max-width:18ch}
+.sub{color:var(--mute);max-width:52ch;margin-bottom:36px}
 
-const S=[['Figma et prototypage','fa-brands fa-figma',90,'design'],['UX research et webdesign','fa-solid fa-vial',80,'design'],['Illustrator, Photoshop, InDesign','fa-solid fa-paintbrush',85,'tools'],['After Effects et DaVinci Resolve','fa-solid fa-film',65,'tools'],['WordPress','fa-brands fa-wordpress',70,'tools'],['3ds Max et Unity (3D)','fa-solid fa-cube',50,'design'],['JavaScript, PHP, Python (débutante)','fa-solid fa-code',35,'dev']];
+/* fond aurore + grain */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+radial-gradient(50% 40% at 8% 6%,rgba(255,156,194,.55),transparent 70%),
+radial-gradient(45% 40% at 92% 22%,rgba(159,211,255,.65),transparent 70%),
+radial-gradient(50% 45% at 15% 62%,rgba(185,243,216,.6),transparent 70%),
+radial-gradient(55% 45% at 88% 88%,rgba(199,182,255,.6),transparent 70%),
+radial-gradient(30% 25% at 55% 40%,rgba(255,241,166,.4),transparent 70%)}
+.grain{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.22;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .5  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
-const $=s=>document.querySelector(s);
-
-$('#mq').innerHTML=Array(2).fill(['UI Design','UX Design','Brand Design','Identité visuelle','Prototypage','Motion design','Montage vidéo','Figma','InDesign','After Effects','DaVinci Resolve'].map(x=>`<span>${x} <em>✦</em></span>`).join('')).join('');
-
-$('#pg').innerHTML=P.map((p,i)=>{
-  const action = p.link 
-    ? `<a href="${p.link}" class="btn-link">Voir le projet <i class="fa-solid fa-arrow-right"></i></a>` 
-    : `<button onclick="op(${i})">Voir le projet <i class="fa-solid fa-arrow-right"></i></button>`;
-  
-  return `<article class="card" style="--c:${p.c}"><div class="thumb"><span class="tag">${p.tag}</span>${p.k}<img src="assets/img/${p.img}" alt="Aperçu ${p.t}" loading="lazy" onerror="this.remove()"></div><div class="cb"><h3>${p.t}</h3><p>${p.d}</p>${action}</div></article>`;
-}).join('');
-
-function op(i){
-  const p=P[i];
-  $('#mc').innerHTML=`<span class="tag" style="position:static;display:inline-block">${p.tag}</span><h3>${p.t}</h3><div class="mi" style="background:linear-gradient(135deg,${p.c},#fff)"><img src="assets/img/${p.img}" alt="" onerror="this.remove()"></div><div class="pb"><b>Contexte</b><br>${p.p}</div><div class="mb"><div><b>Mon rôle</b><br>${p.r}</div><div><b>Livrables</b><ul>${p.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><a class="btn p" href="${p.u}" target="_blank" rel="noopener">Voir sur Behance <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;
-  m.showModal();
-}
-
-m.addEventListener('click',e=>{if(e.target===m)m.close()});
-
-function rs(c){$('#sg').innerHTML=S.filter(s=>c==='all'||s[3]===c).map(s=>`<div class="glass sk2"><div class="l"><span><i class="${s[1]}"></i> ${s[0]}</span><span>${s[2]}%</span></div><div class="bar"><i style="width:${s[2]}%"></i></div></div>`).join('')}
-rs('all');
-
-$('#f').onsubmit=e=>{e.preventDefault();const f=e.target;location.href='mailto:taniaandrepro@gmail.com?subject='+encodeURIComponent('Stage de 6 mois — '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')')};
-</script>
+/* étoile chrome 4 branches */
+.star{position:absolute;display:block;background:var(--chrome);clip-path:polygon(50% 0,60% 40
