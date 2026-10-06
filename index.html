@@ -1,609 +1,309 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Tania André — Designer UI/UX & Brand Designer · Stage de 6 mois</title>
-
 <meta name="description" content="Étudiante en Master 2 Conception, Création et Arts Multimédias, designer UI/UX et brand designer, à la recherche d'un stage de 6 mois.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-
 :root{
-
 --bg:#F7F3FF;--glass:rgba(255,255,255,.62);--ink:#1B1440;--mute:#54487a;
-
 --pink:#FF9CC2;--lilac:#C7B6FF;--sky:#9FD3FF;--mint:#B9F3D8;--butter:#FFF1A6;--cyan:#67d4ff;--violet:#A5BEFF;
-
 --edge:rgba(27,20,64,.14);
-
 --holo:linear-gradient(115deg,#ffb0d6 0%,#c9b8ff 22%,#a2d9ff 44%,#b9f3d8 64%,#fff1a6 82%,#ffb0d6 100%);
-
 --holo-deep:linear-gradient(100deg,#7a4dff,#e0449b 40%,#14a9d6 75%,#7a4dff);
-
 --chrome:linear-gradient(150deg,#fff 0%,#d9d2ff 28%,#9fb4ff 48%,#fff 62%,#ffc2e3 82%,#fff 100%);
-
 --serif:'Fraunces',serif}
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-
 body{font:400 1.02rem/1.6 'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
-
 h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-.02em}
-
 a{color:inherit;text-decoration:none}
-
 :focus-visible{outline:3px solid #5b3fd6;outline-offset:3px}
-
 .wrap{max-width:1160px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
-
 section{padding:72px 0;position:relative}
-
 .sh{font-size:clamp(2rem,5vw,3.3rem);font-weight:800;margin-bottom:12px;max-width:18ch}
-
 .sub{color:var(--mute);max-width:52ch;margin-bottom:36px}
 
- 
-
 /* fond aurore + grain */
-
 .bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:
-
 radial-gradient(50% 40% at 8% 6%,rgba(255,156,194,.55),transparent 70%),
-
 radial-gradient(45% 40% at 92% 22%,rgba(159,211,255,.65),transparent 70%),
-
 radial-gradient(50% 45% at 15% 62%,rgba(185,243,216,.6),transparent 70%),
-
 radial-gradient(55% 45% at 88% 88%,rgba(199,182,255,.6),transparent 70%),
-
 radial-gradient(30% 25% at 55% 40%,rgba(255,241,166,.4),transparent 70%)}
-
 .grain{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.22;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .25  0 0 0 0 .5  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 
- 
-
 /* étoile chrome 4 branches */
-
 .star{position:absolute;display:block;background:var(--chrome);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 6px rgba(255,255,255,.9));animation:tw 4s ease-in-out infinite}
-
 @keyframes tw{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(.8) rotate(18deg)}}
 
- 
-
 /* surface holographique réutilisable */
-
 .holo-edge{border:2px solid transparent;background:linear-gradient(var(--glass),var(--glass)) padding-box,var(--holo) border-box;background-size:auto,300% 100%}
-
 .glass{background:var(--glass);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.9);border-radius:30px;box-shadow:0 10px 40px rgba(122,77,255,.12),inset 0 1px 0 #fff}
 
- 
-
 /* nav */
-
 nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:4px;border-radius:99px;padding:6px;box-shadow:0 8px 30px rgba(122,77,255,.2);max-width:calc(100vw - 20px);background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75)) padding-box,var(--holo) border-box;border:2px solid transparent;backdrop-filter:blur(16px)}
-
 nav a{font:500 .9rem 'DM Sans';padding:8px 14px;border-radius:99px;white-space:nowrap}
-
 nav a:hover{background:rgba(122,77,255,.1)}
-
 nav .cta{background:var(--holo);color:var(--ink);font-weight:700}
-
 @media(max-width:760px){nav .hide{display:none}}
 
- 
-
 /* boutons gélifiés */
-
 .btn{display:inline-flex;align-items:center;gap:10px;font:700 .95rem 'DM Sans';padding:14px 26px;border-radius:99px;border:1.5px solid rgba(27,20,64,.8);background:linear-gradient(180deg,#fff,#efe9ff);color:var(--ink);box-shadow:inset 0 2px 0 #fff,inset 0 -4px 8px rgba(122,77,255,.18),0 8px 20px rgba(122,77,255,.25);cursor:pointer;transition:transform .2s,box-shadow .2s}
-
 .btn:hover{transform:translateY(-2px);box-shadow:inset 0 2px 0 #fff,inset 0 -4px 8px rgba(122,77,255,.18),0 12px 26px rgba(224,68,155,.35)}
-
 .btn.p{background:var(--holo);background-size:200% 100%;animation:sh 8s linear infinite}
-
 @keyframes sh{to{background-position:200% 0}}
-
 .btns{display:flex;flex-wrap:wrap;gap:14px}
 
- 
-
 /* hero */
-
 .hero{padding-top:120px}
-
 .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.7);font-weight:700;font-size:.9rem;padding:8px 18px;border-radius:99px;border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--holo) border-box}
-
 .badge i{width:10px;height:10px;border-radius:50%;background:#12a05c;animation:pl 1.8s infinite}
-
 @keyframes pl{0%{box-shadow:0 0 0 0 rgba(18,160,92,.6)}100%{box-shadow:0 0 0 10px rgba(18,160,92,0)}}
-
 .hg{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;margin-top:24px}
-
 h1{font-size:clamp(2.8rem,8vw,6rem);font-weight:800}
-
 h1 .sk{display:block;font:italic 600 1em/1.05 var(--serif);letter-spacing:-.01em;background:var(--holo-deep);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 10s linear infinite;padding-bottom:.08em}
-
 .lead{font-size:1.15rem;max-width:46ch;margin:22px 0 28px;color:var(--mute)}
-
 .lead b{color:var(--ink)}
-
 .photo{position:relative;justify-self:center;width:min(350px,78vw);aspect-ratio:1}
-
 .photo::before{content:"";position:absolute;inset:-14%;border-radius:50%;background:conic-gradient(from 0deg,#ffb0d6,#c9b8ff,#a2d9ff,#b9f3d8,#fff1a6,#ffb0d6);filter:blur(34px);opacity:.75;animation:rot 18s linear infinite}
-
 @keyframes rot{to{transform:rotate(360deg)}}
-
 .frame{position:absolute;inset:0;border-radius:42% 58% 55% 45%/50% 42% 58% 50%;overflow:hidden;border:4px solid transparent;background:linear-gradient(135deg,#E3EBFF,#F4F0FF) padding-box,var(--holo) border-box;box-shadow:0 20px 50px rgba(122,77,255,.3)}
-
 .frame img{width:100%;height:100%;object-fit:cover}
-
 .st{position:absolute;padding:8px 16px;border-radius:99px;font:700 .85rem 'DM Sans';color:var(--ink);background:linear-gradient(180deg,#fff,#f0eaff);border:1.5px solid rgba(27,20,64,.75);box-shadow:inset 0 2px 0 #fff,0 6px 16px rgba(122,77,255,.3)}
-
 .s1{top:2%;left:-8%;transform:rotate(-8deg)}
-
 .s2{bottom:12%;right:-8%;transform:rotate(6deg)}
-
 .s3{bottom:-3%;left:6%;transform:rotate(-3deg)}
-
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:480px;margin-top:36px;padding-top:24px;border-top:1px solid var(--edge)}
-
 .stats b{display:block;font:800 1.7rem 'Bricolage Grotesque'}
-
 .stats span{font-size:.82rem;color:var(--mute)}
-
 @media(max-width:860px){.hg{grid-template-columns:1fr}.s1{left:0}.s2{right:0}}
 
- 
-
 /* bandeau irisé */
-
 .marq{background:var(--holo);background-size:200% 100%;animation:sh 14s linear infinite;color:var(--ink);border-block:1.5px solid var(--ink);overflow:hidden;padding:14px 0;margin-top:56px;transform:rotate(-1.2deg);position:relative;z-index:1}
-
 .marq div{display:flex;gap:44px;width:max-content;animation:mv 30s linear infinite;font:800 1.5rem 'Bricolage Grotesque'}
-
 @keyframes mv{to{transform:translateX(-50%)}}
-
 .marq em{font-style:normal;color:#fff;-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill}
-
 @media(prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
 
- 
-
 /* bento */
-
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-
 .cell{padding:28px}
-
 .cell h3{font-size:1.5rem;margin-bottom:10px}
-
 .cell p{color:var(--mute)}
-
 .ic{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-size:1.2rem;margin-bottom:16px;color:var(--ink);background:var(--holo);box-shadow:inset 0 2px 0 rgba(255,255,255,.9),0 6px 14px rgba(122,77,255,.25)}
-
 .b1{grid-column:span 4}
-
 .b2{grid-column:span 2;background:var(--holo);background-size:200% 200%;border:1.5px solid var(--ink);border-radius:30px;color:var(--ink);box-shadow:0 10px 40px rgba(122,77,255,.2),inset 0 2px 0 rgba(255,255,255,.8)}.b2 p{color:var(--ink)}
-
 .b2 .ic{background:#fff}
-
 .b3{grid-column:span 6}
-
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-
 .chips span{border:1px solid var(--edge);background:rgba(255,255,255,.85);border-radius:99px;padding:5px 14px;font-size:.9rem;font-weight:500;box-shadow:inset 0 1px 0 #fff}
-
 @media(max-width:820px){.b1,.b2,.b3{grid-column:span 6}}
 
- 
-
 /* projets */
-
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-
 @media(max-width:980px){.pg{grid-template-columns:1fr 1fr}}@media(max-width:620px){.pg{grid-template-columns:1fr}}
-
 .card{--c:var(--violet);display:flex;flex-direction:column;background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)) padding-box,var(--holo) border-box;background-size:auto,300% 100%;border:2.5px solid transparent;border-radius:30px;overflow:hidden;box-shadow:0 14px 36px rgba(122,77,255,.18);transition:transform .25s,box-shadow .25s,background-position .8s}
-
 .card:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 22px 50px rgba(224,68,155,.28);background-position:0 0,100% 0}
-
 .thumb{height:210px;background:radial-gradient(circle at 25% 20%,#fff,transparent 45%),linear-gradient(135deg,var(--c),#fff 90%);position:relative;display:grid;place-items:center;font:italic 600 1.7rem var(--serif);color:rgba(27,20,64,.4);overflow:hidden}
-
 .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);transition:transform .8s;pointer-events:none}
-
 .card:hover .thumb::after{transform:translateX(120%)}
-
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-
 .tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);color:var(--ink);font:700 .78rem 'DM Sans';padding:5px 12px;border-radius:99px;border:1.5px solid var(--ink)}
-
 .cb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
-
 .cb h3{font-size:1.3rem}.cb p{color:var(--mute);font-size:.92rem;flex:1}
-
 .cb button{align-self:flex-start;background:none;border:0;color:var(--ink);font:700 .92rem 'DM Sans';cursor:pointer;padding:4px 0}
-
 .cb button:hover{text-decoration:underline}
 
- 
-
 /* compétences */
-
 .tabs{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
-
 .tabs button{font:700 .9rem 'DM Sans';padding:10px 20px;border-radius:99px;border:1.5px solid var(--ink);background:linear-gradient(180deg,#fff,#efe9ff);color:var(--ink);cursor:pointer;box-shadow:inset 0 2px 0 #fff}
-
 .tabs button[aria-pressed=true]{background:var(--holo);box-shadow:inset 0 2px 0 rgba(255,255,255,.8),0 6px 16px rgba(122,77,255,.3)}
-
 .sg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-
 @media(max-width:720px){.sg{grid-template-columns:1fr}}
-
 .sk2{padding:20px 22px;border-radius:24px}
-
 .sk2 div.l{display:flex;justify-content:space-between;font-weight:700;margin-bottom:10px}
-
 .bar{height:12px;border-radius:9px;background:rgba(27,20,64,.08);overflow:hidden;box-shadow:inset 0 1px 3px rgba(27,20,64,.15)}
-
 .bar i{display:block;height:100%;border-radius:9px;background:var(--holo-deep);box-shadow:inset 0 2px 0 rgba(255,255,255,.5)}
 
- 
-
 /* parcours */
-
 .tl{border-left:2px dashed rgba(122,77,255,.5);margin:28px 0 0 12px;padding-left:34px;display:grid;gap:20px;max-width:680px}
-
 .tl>div{position:relative;padding:22px}
-
 .tl>div::before{content:"";position:absolute;left:-52px;top:20px;width:30px;height:30px;background:var(--chrome);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 4px #9fb4ff)}
-
 .tl small{color:#5b3fd6;font-weight:700}.tl h3{font-size:1.3rem;margin:4px 0}.tl p{color:var(--mute);font-size:.93rem}
 
- 
-
 /* contact */
-
 .ct{position:relative;display:grid;grid-template-columns:1fr 1.2fr;gap:32px;padding:clamp(24px,5vw,52px);background:var(--holo);background-size:200% 200%;animation:sh 16s linear infinite;border:1.5px solid var(--ink);border-radius:44px;box-shadow:0 24px 60px rgba(122,77,255,.3),inset 0 2px 0 rgba(255,255,255,.8);color:var(--ink);overflow:hidden}
-
 @media(max-width:820px){.ct{grid-template-columns:1fr}}
-
 .ct h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;margin-bottom:14px}
-
 .ct .btn{margin-top:22px}
-
 form{display:grid;gap:12px}
-
 label{font-weight:700;font-size:.85rem}
-
 input,textarea{width:100%;font:inherit;padding:12px 16px;border-radius:18px;border:1.5px solid var(--ink);background:rgba(255,255,255,.85);color:var(--ink);margin-top:4px;box-shadow:inset 0 2px 6px rgba(122,77,255,.15)}
-
 footer{padding:36px 0 50px;text-align:center;color:var(--mute);font-size:.9rem;position:relative;z-index:1}
-
 footer a{margin:0 10px;font-size:1.25rem;color:var(--ink)}
 
- 
-
 /* modale */
-
 dialog{margin:auto;max-width:720px;width:calc(100% - 28px);max-height:90vh;overflow:auto;background:linear-gradient(#fff,#fff) padding-box,var(--holo) border-box;color:var(--ink);border:3px solid transparent;border-radius:32px;padding:28px;box-shadow:0 30px 80px rgba(122,77,255,.35)}
-
 dialog::backdrop{background:rgba(60,30,120,.5);backdrop-filter:blur(8px)}
-
 dialog h3{font-size:1.8rem;margin:6px 0 16px}
-
 .mi{height:220px;border-radius:20px;border:1.5px solid var(--ink);overflow:hidden;margin-bottom:16px}
-
 .mi img{width:100%;height:100%;object-fit:cover}
-
 .mb{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 20px}
-
 @media(max-width:600px){.mb{grid-template-columns:1fr}}
-
 .mb div,.pb{background:rgba(199,182,255,.15);border:1px solid var(--edge);border-radius:18px;padding:14px;font-size:.92rem}
-
 .mb ul{padding-left:18px;color:var(--mute)}
-
 .x{position:absolute;top:16px;right:16px;background:none;border:0;color:var(--ink);font-size:1.3rem;cursor:pointer;padding:8px}
-
 </style>
-
 </head>
-
 <body>
-
 <div class="bg"></div><div class="grain"></div>
 
- 
-
 <nav aria-label="Navigation">
-
   <a href="#top" style="font-weight:700">Tania</a>
-
   <a class="hide" href="#apropos">À propos</a>
-
   <a class="hide" href="#projets">Projets</a>
-
   <a class="hide" href="#skills">Compétences</a>
-
   <a class="hide" href="#parcours">Parcours</a>
-
   <a class="cta" href="#contact">Me contacter</a>
-
 </nav>
 
- 
-
 <main id="top">
-
 <section class="hero">
-
   <span class="star" style="width:46px;height:46px;top:100px;right:9%"></span>
-
   <span class="star" style="width:26px;height:26px;top:46%;left:3%;animation-delay:-1.5s"></span>
-
   <span class="star" style="width:64px;height:64px;top:62%;right:3%;animation-delay:-2.5s"></span>
-
   <div class="wrap">
-
     <span class="badge"><i></i> Recherche un stage de 6 mois</span>
-
     <div class="hg">
-
       <div>
-
         <h1>Je conçois vos produits<span class="sk">et univers visuels.</span></h1>
-
         <p class="lead"><b>Tania André</b>, designer UI/UX et brand designer. Diplômée du BUT MMI, en Master 2 Conception, Création et Arts Multimédias : de la recherche utilisateur à la création de contenus multimédias, je donne une identité cohérente aux produits et aux marques.</p>
-
         <div class="btns">
-
           <a class="btn p" href="#projets">Voir mes projets <i class="fa-solid fa-arrow-down"></i></a>
-
           <a class="btn" download href="assets/pdf/CV_Tania_ANDRE.pdf"><i class="fa-solid fa-file-arrow-down"></i> Télécharger mon CV</a>
-
         </div>
-
         <div class="stats">
-
           <div><b>3 ans</b><span>de BUT MMI</span></div>
-
           <div><b>Master 1</b><span>année validée</span></div>
-
           <div><b>6 mois</b><span>stage recherché</span></div>
-
         </div>
-
       </div>
-
       <div class="photo">
-
         <div class="frame"><img src="assets/img/PHOTO-2022-11-25-21-00-26.jpg" alt="Portrait de Tania André" onerror="this.remove()"></div>
-
         <span class="st s1">Master 2 CCAM</span><span class="st s2">UI / UX</span><span class="st s3">Brand design</span>
-
       </div>
-
     </div>
-
   </div>
-
   <div class="marq" aria-hidden="true"><div id="mq"></div></div>
-
 </section>
-
- 
 
 <section id="apropos">
-
   <div class="wrap">
-
     <h2 class="sh">Du design d'interface à l'identité de marque</h2>
-
     <p class="sub">Ce que je cherche, et ce que je peux apporter à une équipe créative ou produit.</p>
-
     <div class="bento">
-
       <div class="glass holo-edge cell b1">
-
         <div class="ic"><i class="fa-solid fa-lightbulb"></i></div>
-
         <h3>Mon objectif</h3>
-
         <p>Me spécialiser dans le design UI/UX et le brand design : concevoir des interfaces claires et accessibles, et créer des contenus multimédias (identité visuelle, supports print, motion, vidéo) qui racontent une marque de façon cohérente.</p>
-
         <div class="chips"><span>UI / UX design</span><span>Brand design</span><span>Identité visuelle</span><span>Contenus multimédias</span></div>
-
       </div>
-
       <div class="cell b2">
-
         <div class="ic"><i class="fa-solid fa-handshake"></i></div>
-
         <h3>Stage de 6 mois</h3>
-
         <p>Je recherche un <b>stage de 6 mois</b> (et non une alternance) comme <b>UI/UX designer</b>, <b>webdesigner</b> ou <b>brand designer</b>.</p>
-
         <p style="margin-top:12px"><a href="#contact" style="font-weight:700;text-decoration:underline">Parlons-en</a></p>
-
       </div>
-
       <div class="glass cell b3">
-
         <h3>Ma boîte à outils</h3>
-
         <div class="chips"><span>Figma</span><span>Adobe XD</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span><span>After Effects</span><span>DaVinci Resolve</span><span>WordPress</span><span>HTML / CSS (bases)</span><span>3ds Max</span><span>Unity</span><span>JavaScript (débutante)</span><span>PHP (débutante)</span><span>Python (débutante)</span></div>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
- 
 
 <section id="projets">
-
   <span class="star" style="width:38px;height:38px;top:40px;right:12%;animation-delay:-1s"></span>
-
   <div class="wrap">
-
     <h2 class="sh">Mes projets</h2>
-
-    <p class="sub">Six réalisations, de l'identité visuelle à l'interface. Cliquez pour voir le contexte, mon rôle et les livrables.</p>
-
+    <p class="sub">Dix réalisations, de l'identité visuelle à l'interface. Cliquez pour voir le contexte, mon rôle et les livrables.</p>
     <div class="pg" id="pg"></div>
-
   </div>
-
 </section>
-
- 
 
 <section id="skills">
-
   <div class="wrap">
-
     <h2 class="sh">Compétences</h2>
-
     <div class="sg" id="sg"></div>
-
   </div>
-
 </section>
-
- 
 
 <section id="parcours">
-
   <div class="wrap">
-
     <h2 class="sh">Parcours</h2>
-
     <div class="tl">
-
       <div class="glass"><small>2024 – en cours</small><h3>Master 2 Conception, Création et Arts Multimédias</h3><p>Université de Franche-Comté, Master Produits et Services Multimédia. Année de Master 1 validée. Design d'expérience, création multimédia et conduite de projet.</p></div>
-
       <div class="glass"><small>2021 – 2024</small><h3>BUT Métiers du Multimédia et de l'Internet</h3><p>IUT Nord Franche-Comté, Montbéliard. UX/UI, audiovisuel, communication digitale et bases du développement web.</p></div>
-
     </div>
-
   </div>
-
 </section>
-
- 
 
 <section id="contact">
-
   <div class="wrap">
-
     <div class="ct">
-
       <span class="star" style="width:70px;height:70px;top:-14px;right:6%"></span>
-
       <div>
-
         <h2>Un stage de 6 mois à pourvoir ?</h2>
-
         <p>Écrivez-moi, je réponds vite. Vous pouvez aussi me joindre à <b>taniaandrepro@gmail.com</b> ou sur LinkedIn.</p>
-
         <a class="btn" download href="assets/pdf/CV_Tania_ANDRE.pdf"><i class="fa-solid fa-file-arrow-down"></i> Mon CV</a>
-
       </div>
-
       <form id="f">
-
         <label>Nom ou organisme<input name="n" required></label>
-
         <label>Votre email<input name="e" type="email" required></label>
-
         <label>Message<textarea name="m" rows="4" required></textarea></label>
-
         <button class="btn" type="submit" style="justify-self:start">Ouvrir mon e-mail <i class="fa-solid fa-paper-plane"></i></button>
-
       </form>
-
     </div>
-
   </div>
-
 </section>
-
 </main>
 
- 
-
 <footer>
-
   <a href="https://fr.linkedin.com/in/tania-andre" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-
   <a href="https://github.com/taniaandre" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-
   <a href="https://www.behance.net/taniaandr" target="_blank" rel="noopener" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-
   <p>© 2026 Tania André. Tous droits réservés.</p>
-
 </footer>
-
- 
 
 <dialog id="m" aria-label="Détail du projet"><button class="x" aria-label="Fermer" onclick="m.close()"><i class="fa-solid fa-xmark"></i></button><div id="mc"></div></dialog>
 
- 
-
 <script>
-
 const B='https://www.behance.net/';
-
 const P=[
-
 {k:'MMI Montbéliard',t:'Refonte MMI Montbéliard',tag:'UX/UI · Web',c:'#A5BEFF',img:'mmi_montbe.png',d:"Refonte ergonomique du site de la formation et du parcours d'orientation des futurs étudiants.",p:"Le site manquait d'attrait pour les lycéens et l'information d'orientation était difficile à trouver.",r:'UI designer et webdesigner',l:['Audit ergonomique et personas','Maquettes Figma interactives','Intégration responsive'],u:B+'gallery/137642649/Projet-Collectif-de-Semestre-3'},
-
 {k:'FLIP',t:'FLIP, contre les fake news',tag:'Application mobile',c:'#FF9CC2',img:'flip.png',d:"Application ludique pour aider les jeunes à vérifier leurs sources et repérer les infox.",p:"Concevoir une interface engageante qui apprend à analyser une information sur mobile.",r:'UX researcher et prototypage',l:['Entretiens et wireframes','Prototype Figma interactif','Tests d\'utilisabilité'],u:B+'gallery/158076559/FLIP'},
-
 {k:'Drøm',t:'Drøm, concert et billetterie',tag:'Identité · Événement',c:'#67d4ff',img:'drom.jpg',d:"Identité visuelle et parcours de billetterie en ligne pour une salle de spectacle.",p:"Créer une identité contemporaine et une réservation fluide sur ordinateur comme sur mobile.",r:'Direction artistique et UI design',l:['Charte graphique','Design system','Prototype de réservation'],u:B+'gallery/158075217/DROEM'},
-
 {k:'Herman Miller',t:'Herman Miller, Aeron Gaming',tag:'E-commerce · UI',c:'#B9F3D8',img:'herman.jpg',d:"Landing page e-commerce responsive pour la chaise ergonomique Aeron.",p:"Mettre en valeur les atouts ergonomiques de l'Aeron auprès d'un public gaming.",r:'UI designer',l:['Landing page interactive','Avis et visuels produit','Version mobile'],u:B+'taniaandr'},
-
 {k:'Craft Beer',t:'Craft Beer Festival Strasbourg',tag:'Site événementiel',c:'#FFF1A6',img:'craft_beer.jpg',d:"Site interactif : brasseries partenaires, programme et infos pratiques.",p:"Présenter plus de vingt brasseries et faciliter la consultation du programme.",r:'Webdesigner et brand designer',l:['Identité événementielle','Maquettes responsive','Carte des exposants'],u:B+'taniaandr'},
-
-{k:'Rêve Exotique',t:'Rêve Exotique, Voujeaucourt',tag:'Webdesign · Marque',c:'#C7B6FF',img:'reve_exotique.jpg',d:"Refonte visuelle du site d'une animalerie spécialisée et de son catalogue.",p:"Valoriser le catalogue de poissons et de matériel avec un design épuré.",r:'Webdesigner UI/UX',l:['Arborescence','Design en thème sombre','Fiches produit'],u:B+'taniaandr'}];
-
+{k:'Rêve Exotique',t:'Rêve Exotique, Voujeaucourt',tag:'Webdesign · Marque',c:'#C7B6FF',img:'reve_exotique.jpg',d:"Refonte visuelle du site d'une animalerie spécialisée et de son catalogue.",p:"Valoriser le catalogue de poissons et de matériel avec un design épuré.",r:'Webdesigner UI/UX',l:['Arborescence','Design en thème sombre','Fiches produit'],u:B+'taniaandr'},
+{k:'UPBFC',t:'Refonte identité visuelle UPBFC',tag:'Identité · Logo',c:'#C7B6FF',img:'upbfc.jpg',d:"Refonte du logo et de l'identité visuelle de l'Université Bourgogne Franche-Comté.",p:"Moderniser l'image de l'université et la rendre plus cohérente sur tous ses supports.",r:'Brand designer',l:['Nouveau logo','Charte graphique','Déclinaisons de l\'identité'],u:B+'gallery/256690181/Refonte-identit-visuelle-UPBFC'},
+{k:'FRAC',t:'Refonte du site web du FRAC',tag:'UX/UI · Web',c:'#9FD3FF',img:'frac.jpg',d:"Refonte du site web du FRAC pour mieux présenter ses collections et son programme.",p:"Rendre le site plus lisible et plus engageant pour les visiteurs et les amateurs d'art.",r:'UI/UX designer',l:['Maquettes web','Nouvelle arborescence','Prototype interactif'],u:B+'gallery/256690627/Projet-refonte-FRAC'},
+{k:'E-commerce PHP',t:'Maquette e-commerce PHP',tag:'E-commerce · UI',c:'#FFB0D6',img:'ecommerce_php.jpg',d:"Maquette d'une boutique en ligne conçue pour un projet de développement en PHP.",p:"Concevoir un parcours d'achat clair, de la fiche produit au panier, avant l'intégration.",r:'UI designer',l:['Maquettes desktop et mobile','Parcours d\'achat','Composants d\'interface'],u:B+'gallery/256684947/Maquette-projet-de-E-Commerce-PHP'},
+{k:'Musée Pop Culture',t:'Musée de la Pop Culture, projet fictif',tag:'Design d\'interfaces',c:'#FFF1A6',img:'musee_pop.jpg',d:"Design d'interfaces pour un musée fictif consacré à la pop culture.",p:"Créer une expérience numérique ludique qui reflète l'univers coloré de la pop culture.",r:'UI designer',l:['Direction artistique','Maquettes d\'interfaces','Prototype'],u:B+'gallery/256685785/Design-dinterfaces-Muse-Pop-Culture'}];
 const S=[['Figma et prototypage','fa-brands fa-figma',90,'design'],['UX research et webdesign','fa-solid fa-vial',80,'design'],['Illustrator, Photoshop, InDesign','fa-solid fa-paintbrush',85,'tools'],['After Effects et DaVinci Resolve','fa-solid fa-film',65,'tools'],['WordPress','fa-brands fa-wordpress',70,'tools'],['3ds Max et Unity (3D)','fa-solid fa-cube',50,'design'],['JavaScript, PHP, Python (débutante)','fa-solid fa-code',35,'dev']];
-
 const $=s=>document.querySelector(s);
-
 $('#mq').innerHTML=Array(2).fill(['UI Design','UX Design','Brand Design','Identité visuelle','Prototypage','Motion design','Montage vidéo','Figma','InDesign','After Effects','DaVinci Resolve'].map(x=>`<span>${x} <em>✦</em></span>`).join('')).join('');
-
 $('#pg').innerHTML=P.map((p,i)=>`<article class="card" style="--c:${p.c}"><div class="thumb"><span class="tag">${p.tag}</span>${p.k}<img src="assets/img/${p.img}" alt="Aperçu ${p.t}" loading="lazy" onerror="this.remove()"></div><div class="cb"><h3>${p.t}</h3><p>${p.d}</p><button onclick="op(${i})">Voir le projet <i class="fa-solid fa-arrow-right"></i></button></div></article>`).join('');
-
 function op(i){const p=P[i];$('#mc').innerHTML=`<span class="tag" style="position:static;display:inline-block">${p.tag}</span><h3>${p.t}</h3><div class="mi" style="background:linear-gradient(135deg,${p.c},#fff)"><img src="assets/img/${p.img}" alt="" onerror="this.remove()"></div><div class="pb"><b>Contexte</b><br>${p.p}</div><div class="mb"><div><b>Mon rôle</b><br>${p.r}</div><div><b>Livrables</b><ul>${p.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></div><a class="btn p" href="${p.u}" target="_blank" rel="noopener">Voir sur Behance <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;m.showModal()}
-
 m.addEventListener('click',e=>{if(e.target===m)m.close()});
-
 function rs(c){$('#sg').innerHTML=S.filter(s=>c==='all'||s[3]===c).map(s=>`<div class="glass sk2"><div class="l"><span><i class="${s[1]}"></i> ${s[0]}</span><span>${s[2]}%</span></div><div class="bar"><i style="width:${s[2]}%"></i></div></div>`).join('')}
-
 rs('all');
-
 $('#f').onsubmit=e=>{e.preventDefault();const f=e.target;location.href='mailto:taniaandrepro@gmail.com?subject='+encodeURIComponent('Stage de 6 mois — '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n'+f.n.value+' ('+f.e.value+')')};
-
 </script>
-
 </body>
-
 </html>
